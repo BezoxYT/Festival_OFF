@@ -74,7 +74,7 @@
 				
 				<div class="lieux">
 					<h3>Lieux de spéctacles</h3>
-					<img src="artistes\image7.png" alt="foule">
+					<img src="..\public\liaisons\images\artistes\image7.png" alt="foule">
 					<iframe src="https://www.google.com/maps/d/u/0/embed?mid=1NCNDAUUorKPuCK3pHCYjet3qiz469kg&ehbc=2E312F&noprof=1" width="320" height="150"></iframe>
 				</div>
       			<h3 class="h3_tarif">Tarifs</h3>
