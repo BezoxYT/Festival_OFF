@@ -1,6 +1,6 @@
 
 <?php $niveau="./";?>
-<?php include ($niveau . "liaisons/php/config.inc.php");?>
+<?php include ($niveau . "public/liaisons/php/config.inc.php");?>
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -11,7 +11,6 @@
 	<meta name="author" content="Guilhem Torres et Donovan Bezuidenhout">
 	<meta charset="utf-8">
 	<title>Festival OFF</title>
-	<link rel="stylesheet" href="a.css">
 	<link rel="icon" href="#" type="svg">
 	<?php include ($niveau . "liaisons/fragments/headlinks.inc.html");?>
 </head>
@@ -137,49 +136,7 @@
 	</div>
 </section>
 <?php include ($niveau . "liaisons/fragments/piedDePage.inc.php");?>
-<?php
-			$requeteSQL="Select titre from actualites";
-			$objStat=$objPdo -> prepare($requeteSQL);
-			$objStat -> execute();
-			$arrActualite=$objStat -> fetchAll();
-			forEach($arrActualite as $actualite){
-				echo $actualite["titre"];?><BR>
-			<?php } ?>
 
-			<section>
-				<h3>Entête de section</h3>
-				<article>
-					<header>
-						<h4>Entête d'article</h4>
-					</header>
-					<p>Lorem ipsum dolor HTML5 nunc aut nunquam sit amet, consectetur adipiscing elit. Vivamus at est eros, vel fringilla urna.</p>
-					<p>Per inceptos himenaeos. Quisque feugiat, justo at vehicula pellentesque, turpis lorem dictum nunc.</p>
-					<footer>
-						<h5>Pied d'article</h5>
-					</footer>
-				</article>
-				<article>
-					<header>
-						<h4>Entête d'article</h4>
-					</header>
-					<p>Lorem ipsum dolor nunc aut nunquam sit amet, consectetur adipiscing elit. Vivamus at est eros, vel fringilla urna. Pellentesque odio</p>
-					<footer>
-						<h5>Pied d'article</h5>
-					</footer>
-				</article>
-			</section>
-		</div>
-	
-   
-        <p><a href="#" class="bouton">Bouton</a></p>
-		<p><a href="#" class="bouton--inverse">Bouton</a></p>
-     <a href="#" class="hyperlien">lien test!</a>
-	</main>
-	
-	<aside>
-            <h3>Barre latérale</h3>
-            <p>Lorem ipsum dolor nunc aut nunquam sit amet, consectetur adipiscing elit. Vivamus at est eros, vel fringilla urna. Pellentesque odio rhoncus AHAHAHAHAHAHAHAH</p>
-	</aside>
 	
 	
 	
