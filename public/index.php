@@ -11,7 +11,6 @@
 	<meta name="author" content="Guilhem Torres et Donovan Bezuidenhout">
 	<meta charset="utf-8">
 	<title>Festival OFF</title>
-	<link rel="stylesheet" href="a.css">
 	<link rel="icon" href="#" type="svg">
 	<?php include ($niveau . "liaisons/fragments/headlinks.inc.html");?>
 </head>
@@ -139,7 +138,7 @@
 <?php include ($niveau . "liaisons/fragments/piedDePage.inc.php");?>
 <?php
 			$requeteSQL="Select titre from actualites";
-			$objStat=$pdoConnexion -> prepare($requeteSQL);
+			$objStat=$objPdo -> prepare($requeteSQL);
 			$objStat -> execute();
 			$arrActualite=$objStat -> fetchAll();
 			forEach($arrActualite as $actualite){
