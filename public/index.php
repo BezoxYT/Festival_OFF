@@ -12,6 +12,7 @@
 	<meta charset="utf-8">
 	<title>Festival OFF</title>
 	<link rel="icon" href="#" type="svg">
+	<link rel="stylesheet" href="..\public\liaisons\css\stylesA.css">
 	<?php include ($niveau . "liaisons/fragments/headlinks.inc.html");?>
 </head>
 
