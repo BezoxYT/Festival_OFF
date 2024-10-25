@@ -1,6 +1,6 @@
 
 <?php $niveau="./";?>
-<?php include ($niveau . "liaisons/php/config.inc.php");?>
+<?php include ($niveau . "public/liaisons/php/config.inc.php");?>
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -139,7 +139,7 @@
 <?php include ($niveau . "liaisons/fragments/piedDePage.inc.php");?>
 <?php
 			$requeteSQL="Select titre from actualites";
-			$objStat=$objPdo -> prepare($requeteSQL);
+			$objStat=$pdoConnexion -> prepare($requeteSQL);
 			$objStat -> execute();
 			$arrActualite=$objStat -> fetchAll();
 			forEach($arrActualite as $actualite){
