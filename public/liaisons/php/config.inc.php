@@ -12,9 +12,9 @@ if (stristr($_SERVER['HTTP_HOST'], 'local') || (substr($_SERVER['HTTP_HOST'], 0,
 // Selon l'environnement d'exécution (développement ou en ligne)
 if ($blnLocal) {
     $strHost = 'localhost';
-    $strBD='festival_off';
-    $strUser = 'course_pwem2_2024';
-    $strPassword= 'pwemii_mdp'; //ajuster au bon mot de passe.
+    $strBD='25_rpni1_OFF';
+    $strUser = 'rpni1_user';
+    $strPassword= 'rpni1_mdp';
     error_reporting(E_ALL);
 } else {
     $strHost = 'timunix3.cegep-ste-foy.qc.ca';
