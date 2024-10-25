@@ -11,20 +11,17 @@ if (stristr($_SERVER['HTTP_HOST'], 'local') || (substr($_SERVER['HTTP_HOST'], 0,
 
 // Selon l'environnement d'exécution (développement ou en ligne)
 if ($blnLocal) {
-    //Local
     $strHost = 'localhost';
-    $strBD='25_rpni1_OFF';
-    $strUser = 'rpni1_user';
-    $strPassword= 'rpni1_mdp';
+    $strBD='Festival_OFF';
+    $strUser = 'course_pwem2_2024';
+    $strPassword= 'pwemii_mdp'; //ajuster au bon mot de passe.
     error_reporting(E_ALL);
 } else {
-    //en ligne
-    $strHost = 'localhost';
-    $strBD='20_rpni1_OFF';
-    $strUser = '20_rpni1_user';
-    $strPassword = '20_rpni1_mdp';
+    $strHost = 'timunix3.cegep-ste-foy.qc.ca';
+    $strBD='prgm1_course';
+    $strUser = 'courseTim';
+    $strPassword = 'c0urset1m';
     error_reporting(E_ALL & ~E_NOTICE);
-    //error_reporting(0);
 }
 
 //Data Source Name pour l'objet PDO
