@@ -12,26 +12,26 @@ if (stristr($_SERVER['HTTP_HOST'], 'local') || (substr($_SERVER['HTTP_HOST'], 0,
 // Selon l'environnement d'exécution (développement ou en ligne)
 if ($blnLocal) {
     $strHost = 'localhost';
-    $strBD='25_rpni1_OFF';
-    $strUser = 'rpni1_user';
-    $strPassword= 'rpni1_mdp';
+    $strBD='24_rpni1_charbon';
+    $strUser = '24_rpni1_charbon';
+    $strPassword= 'Jwbxx9f_8]g2vgxO';
     error_reporting(E_ALL);
 } else {
-    $strHost = 'timunix3.cegep-ste-foy.qc.ca';
-    $strBD='prgm1_course';
-    $strUser = 'courseTim';
-    $strPassword = 'c0urset1m';
+    $strHost = 'timunix3.csfoy.ca';
+    $strBD='24_rpni1_charbon';
+    $strUser = 'charbonniers';
+    $strPassword = 'tomateblanche';
     error_reporting(E_ALL & ~E_NOTICE);
 }
 
 //Data Source Name pour l'objet PDO
 $strDsn = 'mysql:dbname='.$strBD.';host='.$strHost;
 //Tentative de connexion
-$objPdo = new PDO($strDsn, $strUser, $strPassword);
+$pdoConnexion = new PDO($strDsn, $strUser, $strPassword);
 //Changement d'encodage de l'ensemble des caractères pour UTF-8
-$objPdo->exec("SET CHARACTER SET utf8");
+$pdoConnexion->exec("SET CHARACTER SET utf8");
 //Pour obtenir des rapports d'erreurs et d'exception avec errorInfo() du pilote PDO
-$objPdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+$pdoConnexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 //$objPdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_SILENT);
 
 ?>
