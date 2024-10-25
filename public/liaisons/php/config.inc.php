@@ -12,15 +12,15 @@ if (stristr($_SERVER['HTTP_HOST'], 'local') || (substr($_SERVER['HTTP_HOST'], 0,
 // Selon l'environnement d'exécution (développement ou en ligne)
 if ($blnLocal) {
     $strHost = 'localhost';
-    $strBD='24_rpni1_charbon';
-    $strUser = '24_rpni1_charbon';
-    $strPassword= 'Jwbxx9f_8]g2vgxO';
+    $strBD='25_pwem2_OFFv3';
+    $strUser = 'root';
+    $strPassword= 'root';
     error_reporting(E_ALL);
 } else {
     $strHost = 'timunix3.csfoy.ca';
     $strBD='24_rpni1_charbon';
-    $strUser = 'charbonniers';
-    $strPassword = 'tomateblanche';
+    $strUser = '24_rpni1_charbon';
+    $strPassword = 'Jwbxx9f_8]g2vgxO';
     error_reporting(E_ALL & ~E_NOTICE);
 }
 

@@ -1,6 +1,84 @@
-
 <?php $niveau="./";?>
-<?php include ($niveau . "public/liaisons/php/config.inc.php");?>
+<?php include ($niveau . "liaisons/php/config.inc.php");?>
+<?php
+$arrMois=array ('Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août' , ' Septembre', 'Octobre', 'Novembre' , 'Décembre') ;
+$arrJours=array ('Dimanche', 'Lundi', 'Mardi ', 'Mercredi' , ' Jeudi', 'Vendredi' , ' Samedi ' ) ;
+
+		$strRequeteActualites="SELECT
+		titre,
+		DAY(date_actualite) AS jour_actualite,
+        MONTH(date_actualite) AS mois_actualite,
+        YEAR(date_actualite) AS annee_actualite,
+        HOUR(date_actualite) AS heure_actualite,
+        MINUTE(date_actualite) AS minute_actualite,
+        DAYNAME(date_actualite) AS jour_semaine_actualite,
+		auteurs,
+		article
+		FROM
+		actualites
+		ORDER BY
+		annee_actualite DESC,
+		mois_actualite DESC,
+		jour_actualite DESC
+		LIMIT 0,3";
+
+		$strRequeteArtisteVedette = 'SELECT
+		artistes.id AS id_artiste,
+		artistes.nom AS nom_artiste
+		FROM
+		artistes
+		ORDER BY 
+		nom_artiste ASC';
+
+
+		$pdosResultatActualites=$pdoConnexion->prepare($strRequeteActualites);
+		$pdosResultatActualites->execute();
+		$pdosResultatArtisteVedette = $pdoConnexion->prepare($strRequeteArtisteVedette);
+		$pdosResultatArtisteVedette->execute();
+		?>
+
+<?php 
+		$arrActualites=array ();
+		for ($cptEnr=0;$ligneActualite=$pdosResultatActualites->fetch();$cptEnr++){
+		$arrActualites[$cptEnr] ["titre"]=$ligneActualite["titre"];
+		$arrActualites [$cptEnr] ["jour_actualite"]=$ligneActualite["jour_actualite"];
+		$arrActualites [$cptEnr] ["jour_semaine_actualite"]=$ligneActualite ["jour_semaine_actualite"];
+		$arrActualites[$cptEnr] ["mois_actualite"]=$ligneActualite["mois_actualite"];
+		$arrActualites[$cptEnr] ["annee_actualite"]=$ligneActualite ["annee_actualite"];
+		$arrActualites [$cptEnr] ["heure_actualite"]=$ligneActualite["heure_actualite"];
+		$arrActualites [$cptEnr] ["minute_actualite"]=$ligneActualite["minute_actualite"];
+		$arrActualites [$cptEnr] ["auteurs"]=$ligneActualite["auteurs"];
+		//Coupe le texte en tableau
+		$arrArticle=explode(" ",$ligneActualite["article"]);
+		//Si plus grand que 45 mots
+		if (count ($arrArticle) >45){
+		//Couper le reste du texte
+		array_splice($arrArticle,45, count ($arrArticle));
+		}
+		//Reprend le tableau et recompose le texte, stocke dans la propriété article du tableau
+		$arrActualites [$cptEnr] ["article"]=implode(" ",$arrArticle) ;
+		}
+
+		$arrArtistesSugg = array();
+		$ligne = $pdosResultatArtisteVedette->fetch();
+		for($intCptEnr=0; $intCptEnr < $pdosResultatArtisteVedette->rowCount(); $intCptEnr++) {
+        $arrArtistesSugg[$intCptEnr]['nom_artiste'] = $ligne['nom_artiste'];
+        $arrArtistesSugg[$intCptEnr]['id_artiste'] = $ligne['id_artiste'];
+        $ligne = $pdosResultatArtisteVedette->fetch();
+}
+
+	$nbArtistesChoisis = rand(3,5);
+	$arrArtistesChoisis = array();
+	for($intCpt=0; $intCpt < $nbArtistesChoisis; $intCpt++) {
+    $intIndexHazard=rand(0,count($arrArtistesSugg)-1);
+    array_push($arrArtistesChoisis, $arrArtistesSugg[$intIndexHazard]);
+    array_splice($arrArtistesSugg, $intIndexHazard, 1);
+}
+
+
+		$pdosResultatActualites->closeCursor () ;
+		$pdosResultatArtisteVedette->closeCursor();
+		?>
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -18,6 +96,34 @@
 <body>
 	<?php include ($niveau . "liaisons/fragments/entete.inc.php");?>
 	<main>
+	<main>
+		<h1>Actualités</h1>
+		<?php
+		
+		foreach ($arrActualites as $actualite){
+			echo '<article>';
+			echo '<h2>'.$actualite["titre"].'</h2>';
+			$jourSemaineTexte = $arrJours[array_search($actualite['jour_semaine_actualite'], ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'])];
+			echo '<p>Publié le '.$jourSemaineTexte.' '.$actualite["jour_actualite"].' '.$arrMois[$actualite["mois_actualite"]].' '.$actualite["annee_actualite"].' à '.$actualite["heure_actualite"].'h'.$actualite["minute_actualite"].' par '.$actualite["auteurs"].'</p>';
+			echo '<p>'.$actualite["article"].'</p>';
+			echo '</article>';
+		}
+		?>
+		<h1>Artiste en vedette</h1>
+<ul>
+<?php
+for($intCpt=0; $intCpt < count($arrArtistesChoisis); $intCpt++) {
+    ?>
+    <li>
+        <a href='artistes/fiches/index.php?id_artiste=<?php echo $arrArtistesChoisis[$intCpt]['id_artiste'];?>'>
+            <?php echo $arrArtistesChoisis[$intCpt]['nom_artiste'];?>
+        </a>
+    </li>
+    <?php
+} 
+
+
+?>
 		<img src="#" alt="">
 		<h2>Actualité</h2>
 		<div id="contenu" class="cartes-actu">
@@ -135,53 +241,8 @@
 		<a href="https://maps.app.goo.gl/4gbw4B4DhNY7jeYS7">832 St-Joseph Est, Québec</a>
 	</div>
 </section>
+</div>
+</main>
 <?php include ($niveau . "liaisons/fragments/piedDePage.inc.php");?>
-<?php
-			$requeteSQL="Select titre from actualites";
-			$objStat=$objPdo -> prepare($requeteSQL);
-			$objStat -> execute();
-			$arrActualite=$objStat -> fetchAll();
-			forEach($arrActualite as $actualite){
-				echo $actualite["titre"];?><BR>
-			<?php } ?>
-
-			<section>
-				<h3>Entête de section</h3>
-				<article>
-					<header>
-						<h4>Entête d'article</h4>
-					</header>
-					<p>Lorem ipsum dolor HTML5 nunc aut nunquam sit amet, consectetur adipiscing elit. Vivamus at est eros, vel fringilla urna.</p>
-					<p>Per inceptos himenaeos. Quisque feugiat, justo at vehicula pellentesque, turpis lorem dictum nunc.</p>
-					<footer>
-						<h5>Pied d'article</h5>
-					</footer>
-				</article>
-				<article>
-					<header>
-						<h4>Entête d'article</h4>
-					</header>
-					<p>Lorem ipsum dolor nunc aut nunquam sit amet, consectetur adipiscing elit. Vivamus at est eros, vel fringilla urna. Pellentesque odio</p>
-					<footer>
-						<h5>Pied d'article</h5>
-					</footer>
-				</article>
-			</section>
-		</div>
-	
-   
-        <p><a href="#" class="bouton">Bouton</a></p>
-		<p><a href="#" class="bouton--inverse">Bouton</a></p>
-     <a href="#" class="hyperlien">lien test!</a>
-	</main>
-	
-	<aside>
-            <h3>Barre latérale</h3>
-            <p>Lorem ipsum dolor nunc aut nunquam sit amet, consectetur adipiscing elit. Vivamus at est eros, vel fringilla urna. Pellentesque odio rhoncus AHAHAHAHAHAHAHAH</p>
-	</aside>
-	
-	
-	
-
 </body>
 </html>
