@@ -59,3 +59,292 @@
 
 @import "layout/entete";
 @import "layout/piedDePage";
+
+
+
+/* Actualité */
+.actu{
+    text-align: center;
+    font-size: 32px;
+    font-weight: bold;
+     
+}
+.cartes_actu{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.carte{
+    background-color: #D8059E;
+    border-radius: 10px;
+    border: solid 2px black;
+    width: 75%;
+    margin-bottom: 60px;
+    padding: 0 10px 20px 10px;
+}
+.carte h3{
+    text-align: center;
+    font-size: 32px;
+    color: white;
+}
+.carte p{
+text-align: center;
+color: white;
+}
+.album{
+    display: flex;
+    margin: 0 auto;
+}
+.emplacement{
+    display: flex;
+    align-items: center;
+    color: white;
+    justify-content: flex-start;
+    margin: 0 auto;
+
+}
+
+.emplacement img.svg {
+    margin-right: 8px;
+}
+.emplacement p{
+    text-align: left;
+    margin: 30px 0;
+}
+
+.svg{
+    height: 35px;
+}
+
+.carte button{
+    display: flex;
+    margin: 40px auto;
+    padding: 10px 40px;
+    background-color: #191970;
+    color: white;
+    border-radius: 10px;
+    border:  1px solid white;
+}
+.carte button:hover{
+    background-color: #2a2ac0;
+
+}
+@media screen and (min-width: 600px) {
+    .cartes_actu{
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: stretch;
+        gap: 20px;
+    }
+    .carte{
+        flex: 1 1 20%;
+        max-width: 400px;
+        margin: 10px;
+        height: 550px;
+    }
+}
+
+/* CARTE */
+.lieux {
+    position: relative;
+    text-align: center;
+}
+
+.lieux img {
+    width: 100%;
+    height: auto; 
+}
+
+.lieux h3 {
+    position: absolute;
+    top: -10px;
+    left: 50%; 
+    transform: translateX(-50%); 
+    color: white;
+    font-size: 20px;
+    z-index: 3;
+}
+
+.lieux iframe {
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    width: 90%;
+    height: 70%;
+    
+}
+
+.lieux::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(155, 0, 155, 0.75);
+    z-index: 1;
+}
+
+@media screen and (min-width: 600px) {
+    .lieux h3 {
+        font-size: 48px;
+    }
+    .lieux iframe {
+        top: 130px;
+        width: 80%;
+        height: 70%;
+    }
+    .lieux img {
+        width: 100%;
+        height: auto; 
+    }
+    
+}
+
+.h3_tarif{
+    font-size: 48px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.carte-tarif { 
+    background-color: #7720D4;
+    text-align: center;
+    margin: 20px;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    min-height: 350px; 
+}
+
+.prix {
+    padding-top: 14px;
+    font-size: 32px;
+    font-weight: bold;
+    color: white;
+}
+
+.p_tarif {
+    font-size: 20px;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.btn-tarifs {
+    background-color: #D8059E;
+    padding: 10px 50px;
+    color: white;
+    border-radius: 10px;
+    border: white 1px solid;
+    margin-top: auto;
+}
+
+.btn-tarifs:hover {
+    background-color: #ff5dd4;
+    transition:  0.6s;
+}
+
+
+.web{
+    background-color: #D8059E;
+    margin: 20px;
+    border-radius: 10px;
+    padding: 15px;
+}
+.texte-web{
+    background-color: #7720D4;
+    border-radius: 10px;
+    border: white 1px solid;
+    text-align: center;
+    padding: 100px;
+}
+.texte-web p{
+    color: white;
+}
+.texte-web a{
+    color: white;
+}
+.texte-web a:hover{
+    color: rgb(201, 201, 201);
+}
+@media screen and (min-width: 600px) {
+    .tarifs {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .carte-tarif {
+        flex: 1 1 20%;
+        max-width: 235px;
+        height: 220px;
+        margin: 20px;
+
+    }
+    
+    .btn-tarifs {
+        margin-top: 20px auto;
+    }
+    .web{
+        margin: 60px auto 100px auto;
+        max-width: 600px;
+    }
+    .texte-web p{
+        font-size: 24px;
+    }
+}
+
+/* PARTENAIRES */
+.partenaires{
+    background-color: #D8059E;
+    padding: 20px;
+    margin-top: -20px;
+}
+.h2_partenaires{
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    background-color: #D8059E;
+    padding: 30px;
+    margin-top: 50px;
+}
+.carte-partenaires img{
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+.carte-partenaires a{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 30px;
+    color: white;
+}
+.carte-partenaires a:hover{
+    color: rgb(201, 201, 201);
+}
+
+@media screen and (min-width: 600px) {
+    .partenaires{
+      display: flex;   
+      justify-content: center;
+    }
+    .carte-partenaires{
+       padding-left: 50px;
+    }
+    .carte-partenaires a{
+        width: 175px;
+        text-align: center;
+    }
+    .h2_partenaires{
+        font-size: 25px;
+        margin-bottom: 20px;
+        
+    
+    }
+}
+

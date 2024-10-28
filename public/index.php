@@ -90,7 +90,7 @@ $arrJours=array ('Dimanche', 'Lundi', 'Mardi ', 'Mercredi' , ' Jeudi', 'Vendredi
 	<meta charset="utf-8">
 	<title>Festival OFF</title>
 	<link rel="icon" href="#" type="svg">
-	<link rel="stylesheet" href="..\public\liaisons\css\stylesA.css">
+	<link rel="stylesheet" href="..\public\liaisons\css\stylesB.css">
 	<?php include ($niveau . "liaisons/fragments/headlinks.inc.html");?>
 </head>
 
@@ -120,44 +120,52 @@ for($intCpt=0; $intCpt < count($arrArtistesChoisis); $intCpt++) {
             <?php echo $arrArtistesChoisis[$intCpt]['nom_artiste'];?>
         </a>
     </li>
+</ul>
     <?php
 } 
 
 
 ?>
 		<img src="#" alt="">
-		<h2>Actualité</h2>
-		<div id="contenu" class="cartes-actu">
+
+		<h2 class="actu">Actualité</h2>
+		<div id="contenu" class="cartes_actu">
 			<div class="carte">
 				<h3>9 Juillet 2018</h3>
 				<p>Publiée à : 08:33</p>
-				<img src="#" alt="album the babalooneys">
-				<svg></svg>
-				<p>Scène de la famille Télé-Québec accès libre</p>
+				<img class="album" src="..\public\liaisons\images\actu\babaloones_w190_actu.jpg" alt="album the babalooneys">
+				<div class="emplacement">
+				<img class="svg" src="..\public\liaisons\images\ion_location-outline.svg" alt="">
+				<p>Scène de la famille Télé-Québec - accès libre</p>
+				</div>
 				<p>À 19 h 30, The Babalooneys (Québec), un quintette (...)</p>
 				<button>Lire la suite</button>
 			</div>
 			<div class="carte">
 				<h3>10 Juillet 2018</h3>
 				<p>Publiée à : 10:00</p>
-				<img src="#" alt="album the babalooneys">
-				<svg></svg>
+				<img class="album" src="..\public\liaisons\images\actu\Harvest-Breed_w190_actu.jpg" alt="album the babalooneys">
+				<div class="emplacement">
+				<img class="svg" src="..\public\liaisons\images\ion_location-outline.svg" alt="">
 				<p>Scène Caisse populaire de Québec - accès libre</p>
+				</div>
 				<p>À 17 h, le sextuor Harvest Breed (Sherbrooke) (...)</p>
 				<button>Lire la suite</button>
 			</div>
 			<div class="carte">
 				<h3>9 Juillet 2018</h3>
 				<p>Publiée à : 08:33</p>
-				<img src="#" alt="album the babalooneys">
-				<svg></svg>
+				<img class="album" src="..\public\liaisons\images\actu\LATourelle-Orkestra_w190_actu.jpg" alt="album the babalooneys">
+				<div class="emplacement">
+				<img class="svg" src="..\public\liaisons\images\ion_location-outline.svg" alt="">
 				<p>Rue Cartier/Scène Brunet - accès libre</p>
+				</div>
 				<p>À 17 h 30, LaTourelle Orkestra (Québec) vous (...)</p>
 				<button>Lire la suite</button>
 			</div>
 
-			<h2>Artistes à d'écouvrir</h2>
-			<div class="artistes">
+			
+			<div class="artistes"><h2>Artistes à d'écouvrir</h2>
 				<div class="artsiteA">
 					<img src="#" alt="Artistes">
 					<h3>Diamond Rings</h3>

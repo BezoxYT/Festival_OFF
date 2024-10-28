@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 /**
- * @author Guilhem Torres 2340118@csfoy.ca
+ * @author Prenom Nom <courriel>
  * @todo Lier les modules avec des instructions @import
  */
 
@@ -61,6 +61,89 @@
 @import "layout/piedDePage";
 
 
+
+/* Actualité */
+.actu{
+    text-align: center;
+    font-size: 32px;
+    font-weight: bold;
+     
+}
+.cartes_actu{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.carte{
+    background-color: #D8059E;
+    border-radius: 10px;
+    border: solid 2px black;
+    width: 75%;
+    margin-bottom: 60px;
+    padding: 0 10px 20px 10px;
+}
+.carte h3{
+    text-align: center;
+    font-size: 32px;
+    color: white;
+}
+.carte p{
+text-align: center;
+color: white;
+}
+.album{
+    display: flex;
+    margin: 0 auto;
+}
+.emplacement{
+    display: flex;
+    align-items: center;
+    color: white;
+    justify-content: flex-start;
+    margin: 0 auto;
+
+}
+
+.emplacement img.svg {
+    margin-right: 8px;
+}
+.emplacement p{
+    text-align: left;
+    margin: 30px 0;
+}
+
+.svg{
+    height: 35px;
+}
+
+.carte button{
+    display: flex;
+    margin: 40px auto;
+    padding: 10px 40px;
+    background-color: #191970;
+    color: white;
+    border-radius: 10px;
+    border:  1px solid white;
+}
+.carte button:hover{
+    background-color: #2a2ac0;
+
+}
+@media screen and (min-width: 600px) {
+    .cartes_actu{
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: stretch;
+        gap: 20px;
+    }
+    .carte{
+        flex: 1 1 20%;
+        max-width: 400px;
+        margin: 10px;
+        height: 550px;
+    }
+}
 
 /* CARTE */
 .lieux {
@@ -177,7 +260,7 @@
     border-radius: 10px;
     border: white 1px solid;
     text-align: center;
-    padding: 20px 0 20px 0;
+    padding: 100px;
 }
 .texte-web p{
     color: white;
