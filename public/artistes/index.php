@@ -1,5 +1,5 @@
 <?php
-$niveau = '../../';
+$niveau = '../';
 
 if (isset($_GET['id_style'])) {
     $id_style = $_GET['id_style'];
@@ -14,7 +14,7 @@ if(isset($_GET['id_page'])){
 
 error_reporting(E_ALL);
 
-include $niveau . 'public/liaisons/php/config.inc.php';
+include $niveau . 'liaisons/php/config.inc.php';
 
 	$intMaxParPage = 4;
 
@@ -189,12 +189,12 @@ $pdosResultatArtisteVedette->closeCursor();
 <head>
     <meta charset="utf-8">
     <title>Liste des participants</title>
-    <?php include $niveau . 'public/liaisons/fragments/headlinks.inc.html'; ?>
+    <?php include $niveau . 'liaisons/fragments/headlinks.inc.html'; ?>
     <base href="<?php echo $niveau; ?>" />
 </head>
 <body>
     
-    <?php include $niveau . 'public/liaisons/fragments/entete.inc.php'; ?>
+    <?php include $niveau . 'liaisons/fragments/entete.inc.php'; ?>
     <?php
     if (isset($id_style)) {
         $strRequeteStyle = 'SELECT id, nom FROM styles WHERE id=' . $id_style;

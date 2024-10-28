@@ -89,14 +89,13 @@ $arrJours=array ('Dimanche', 'Lundi', 'Mardi ', 'Mercredi' , ' Jeudi', 'Vendredi
 	<meta name="author" content="Guilhem Torres et Donovan Bezuidenhout">
 	<meta charset="utf-8">
 	<title>Festival OFF</title>
-	<link rel="icon" href="#" type="svg">
-	<link rel="stylesheet" href="..\public\liaisons\css\stylesA.css">
+	<link rel="icon" href="liaisons/images/favicons/logoOff_blanc.png" type="svg">
 	<?php include ($niveau . "liaisons/fragments/headlinks.inc.html");?>
 </head>
+	<?php include ($niveau . "liaisons/fragments/entete.inc.php");?>
 
 <body>
-	<?php include ($niveau . "liaisons/fragments/entete.inc.php");?>
-	<main>
+	<img class="imageBanniere" src="https://placehold.co/600x400" alt="">
 	<main>
 		<h1>Actualités</h1>
 		<?php
