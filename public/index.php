@@ -214,7 +214,7 @@ for ($intCpt = 0; $intCpt < count($arrArtistesChoisis); $intCpt++) {
                
                 <div class="lieux">
                     <h3>Lieux de spéctacles</h3>
-                    <img src="..\public\liaisons\images\artistes\image7.png" alt="foule">
+                    <img src="liaisons\images\image7.jpg" alt="foule">
                     <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1NCNDAUUorKPuCK3pHCYjet3qiz469kg&ehbc=2E312F&noprof=1" width="320" height="150"></iframe>
                 </div>
                 <h3 class="h3_tarif" id="tarifs">Tarifs</h3>
