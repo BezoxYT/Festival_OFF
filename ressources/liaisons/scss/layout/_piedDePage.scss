@@ -23,7 +23,7 @@ ul{
 .footer__carte h4{
   margin-bottom: 30px;
   position: relative;
-  color: white;
+  color: $blanc;
   font-size: 30px;
   font-weight: 100;
 }
@@ -32,7 +32,7 @@ ul{
   position: absolute;
   left: 0;
   bottom: -10px;
-  background-color: #D8059E;
+  background-color: $HotPink;
   height: 2px;
   box-sizing: border-box;
   width: 50px;
@@ -42,7 +42,7 @@ margin-bottom: 10px;
 }
 .footer__carte ul li a{
 text-decoration: none;
-color: white;
+color: $blanc;
 display: block;
 transition: all 0.3s ease;
 }
@@ -72,19 +72,19 @@ width: 15%;
   }
 }
 footer{
-  background-color: #7720D4;
+  background-color: $PurpleHeart;
 }
 .h4__festival{
   text-align: center;
   font-size: 30px;
-  color: white;
+  color: $blanc;
 }
 .contact{
   text-align: center;
   padding-top: 20px;
 }
 .contact a{
-  color: white;
+  color: $blanc;
   display: block;
   margin-bottom: 10px;
 }
@@ -97,6 +97,6 @@ footer{
 
 .copyrights{
   text-align: center;
-  color: white;
+  color: $blanc;
   padding-bottom: 20px;
 }

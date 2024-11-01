@@ -13,67 +13,52 @@
 
  
 
- 
-/**
- * @author Prenom Nom <courriel>
- * @todo Lier les modules avec des instructions @import
- */
- 
-/*
- * ------------------
- * TABLE DES MATIERES
- * ------------------
- * Librairies
- ** Normalize
- * UTILITAIRES
- ** Variables
- ** Mixins
- * BASE
- ** Typographie
- ** Hyperliens
- ** Boutons
- * MODULES
- ** gds - Styles généraux du Guide de styles
- ** palette - Palette de couleurs
- ** listeInteractivite - Éléments interactifs
- */
- 
-/****** Librairies ****************************/
- 
 
-// @import '../../../node_modules/normalize.scss/normalize.scss';
- 
- 
-
- 
-
-// @import 'utilitaires/variables';
-
-// @import 'utilitaires/mixins';
-
-
-// @import 'base/typo';
- 
-
-// @import 'base/hyperlien';
-
-// @import 'base/bouton';
- 
-// @import 'base/grille';
- 
-// @import "modules/menu";
- 
-// @import "layout/entete";
-// @import "layout/piedDePage";
  
  
  
 /* Actualité */
+.svg__container {
+    position: relative;
+    width: 100%;
+    height: auto;
+    margin-top: 150px;
+    margin-bottom: 30px;
+}
+
+.fondH1Infos {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    z-index: 1;
+}
 .h1{
-  font-size: 32px;
-  text-align: center;
-  margin-bottom: 20px;
-  margin-top: 100px;
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: $blanc;
+    @include fontSize(60px);
+    font-weight: bold;
+    text-align: center;
+    z-index: 2;
+    font-family: $fontePrimaire;
+}
+@media (max-width: 600px) {
+    .nom-artiste {
+        @include fontSize(60px);
+        -webkit-text-stroke: 2px $blanc;
+        text-stroke: 2px $blanc;
+        letter-spacing: 15px;
+    }
+    .fondH1Infos {
+        width: 200% !important;
+    }
+    .svg-container {
+        margin-top: 35px;
+    }
 }
 .actu{
     text-align: center;
@@ -88,23 +73,24 @@
     justify-content: center;
 }
 .carte{
-    background-color: #D8059E;
+    background-color: $HotPink;
     border-radius: 10px;
-    border: solid 2px black;
+    border: solid 2px $noir;
     width: 75%;
     margin-bottom: 60px;
     padding: 0 10px 20px 10px;
 }
 .p_actu{
     text-align: left;
-    color: white;
+    color: $blanc;
     text-transform: none;
     font-size: 16px;
+    font-family: $fonteSecondaire;
     
 }
 .date{
 text-align: center;
-color: white;
+color: $blanc;
 padding: 20px;
 }
 .album{
@@ -114,7 +100,7 @@ padding: 20px;
 .emplacement{
     display: flex;
     align-items: center;
-    color: white;
+    color: $blanc;
     justify-content: flex-start;
     margin: 0 auto;
     padding-top: 20px;
@@ -133,7 +119,7 @@ padding: 20px;
     height: 35px;
 }
 .texte{
-  color: white;
+  color: $blanc;
   padding-top: 20px;
   margin-bottom: 30px;
 }
@@ -142,9 +128,9 @@ padding: 20px;
     margin: 40px auto;
     padding: 10px 40px;
     background-color: #191970;
-    color: white;
+    color: $blanc;
     border-radius: 10px;
-    border:  1px solid white;
+    border:  1px solid $blanc;
 }
 .button:hover{
     background-color: #2a2ac0;
@@ -180,17 +166,18 @@ padding: 20px;
 
 /* ARTISTES EN VEDETTE */
 .h1_artiste{
-    color: white;
+    color: $blanc;
     text-align: center;
     margin: 30px 0 20px 0;
     font-size: 32px;
+    font-family: $fontePrimaire;
 }
 .artistes{
     width: 300px;
-    background-color: #D8059E;
+    background-color: $HotPink;
     padding: 20px 10px;
     border-radius: 10px;
-    border: solid 2px black;
+    border: solid 2px $noir;
     margin: 20px auto;
 }
 
@@ -207,9 +194,9 @@ padding: 20px;
 .button_artiste{
     background-color: #191970;
     padding: 10px 40px;
-    color: white;
+    color: $blanc;
     border-radius: 10px;
-    border: white 1px solid;
+    border: $blanc 1px solid;
     margin: 20px 0 30px 0;
     width: auto;
     align-self: center;
@@ -220,7 +207,7 @@ padding: 20px;
     padding-bottom: 20px;
 }
 .artiste_background{
-    background-color: #7720D4;
+    background-color: $PurpleHeart;
     padding: 30px;
     margin: 30px 0;
 }
@@ -276,9 +263,9 @@ padding: 20px;
     top: 20px;
     left: 50%;
     transform: translateX(-50%);
-    color: white;
-    font-size: 20px;
+    color: $HotPink;
     z-index: 3;
+    font-family: $fontePrimaire;
 }
  
 .lieux iframe {
@@ -326,7 +313,7 @@ padding: 20px;
 }
  
 .carte-tarif {
-    background-color: #7720D4;
+    background-color: $PurpleHeart;
     text-align: center;
     margin: 20px;
     border-radius: 10px;
@@ -341,21 +328,21 @@ padding: 20px;
     padding-top: 14px;
     font-size: 32px;
     font-weight: bold;
-    color: white;
+    color: $blanc;
 }
  
 .p_tarif {
     font-size: 20px;
-    color: white;
+    color: $blanc;
     margin-bottom: 10px;
 }
  
 .btn-tarifs {
-    background-color: #D8059E;
+    background-color: $HotPink;
     padding: 10px 40px;
-    color: white;
+    color: $blanc;
     border-radius: 10px;
-    border: white 1px solid;
+    border: $blanc 1px solid;
     margin-top: auto;
     width: auto;
     align-self: center;
@@ -368,23 +355,23 @@ padding: 20px;
  
  
 .web{
-    background-color: #D8059E;
+    background-color: $HotPink;
     margin: 20px;
     border-radius: 10px;
     padding: 15px;
 }
 .texte-web{
-    background-color: #7720D4;
+    background-color: $PurpleHeart;
     border-radius: 10px;
-    border: white 1px solid;
+    border: $blanc 1px solid;
     text-align: center;
     padding: 10px;
 }
 .texte-web p{
-    color: white;
+    color: $blanc;
 }
 .texte-web a{
-    color: white;
+    color: $blanc;
 }
 .texte-web a:hover{
     color: rgb(201, 201, 201);
@@ -418,7 +405,7 @@ padding: 20px;
  
 /* PARTENAIRES */
 .partenaires{
-    background-color: #D8059E;
+    background-color: $HotPink;
     padding: 20px;
     margin-top: -20px;
 }
@@ -426,8 +413,8 @@ padding: 20px;
     font-size: 16px;
     font-weight: bold;
     text-align: center;
-    color: white;
-    background-color: #D8059E;
+    color: $blanc;
+    background-color: $HotPink;
     padding: 30px;
     margin-top: 50px;
 }
@@ -440,7 +427,7 @@ padding: 20px;
     display: flex;
     justify-content: center;
     padding-bottom: 30px;
-    color: white;
+    color: $blanc;
 }
 .carte-partenaires a:hover{
     color: rgb(201, 201, 201);

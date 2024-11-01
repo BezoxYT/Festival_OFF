@@ -493,74 +493,6 @@ body {
   }
 }
 
-h1,
-.titreNiveau1,
-h2,
-.titreNiveau2,
-h3,
-.titreNiveau3 {
-  font-family: LemonMilk, sans-serif;
-  font-weight: 500;
-}
-
-h1,
-.titreNiveau1 {
-  font-size: 28px;
-  font-size: 2.8rem;
-  margin: 0;
-}
-h1--desktop,
-.titreNiveau1--desktop {
-  font-size: 48px;
-  font-size: 4.8rem;
-  padding-bottom: 15px;
-  position: relative;
-}
-h1--desktop:after,
-.titreNiveau1--desktop:after {
-  background-color: rgba(255, 79, 188, 0.5);
-  content: "";
-  display: inline-block;
-  width: 150px;
-  height: 8px;
-  position: absolute;
-  left: 0;
-  bottom: 0;
-}
-
-h2,
-.titreNiveau2 {
-  font-size: 20px;
-  font-size: 2rem;
-  text-transform: uppercase;
-}
-h2--desktop,
-.titreNiveau2--desktop {
-  font-size: 28px;
-  font-size: 2.8rem;
-}
-
-h3,
-.titreNiveau3 {
-  font-size: 18px;
-  font-size: 1.8rem;
-}
-h3--desktop,
-.titreNiveau3--desktop {
-  font-size: 22px;
-  font-size: 2.2rem;
-}
-
-.texte {
-  font-family: Quicksand-Medium, sans-serif;
-  font-size: 16px;
-  font-size: 1.6rem;
-  line-height: 1.375;
-}
-.texte--desktop {
-  line-height: 1.5;
-}
-
 /** Hyperliens **/
 /**
 * @author Prenom Nom courriel
@@ -946,7 +878,7 @@ ul {
   position: absolute;
   left: 0;
   bottom: -10px;
-  background-color: #D8059E;
+  background-color: #FF4FBC;
   height: 2px;
   box-sizing: border-box;
   width: 50px;
@@ -1027,37 +959,53 @@ footer {
   flex-direction: row;
 }
 
-/**
- * @author Prenom Nom <courriel>
- * @todo Lier les modules avec des instructions @import
- */
-/*
- * ------------------
- * TABLE DES MATIERES
- * ------------------
- * Librairies
- ** Normalize
- * UTILITAIRES
- ** Variables
- ** Mixins
- * BASE
- ** Typographie
- ** Hyperliens
- ** Boutons
- * MODULES
- ** gds - Styles généraux du Guide de styles
- ** palette - Palette de couleurs
- ** listeInteractivite - Éléments interactifs
- */
-/****** Librairies ****************************/
 /* Actualité */
-.h1 {
-  font-size: 32px;
-  text-align: center;
-  margin-bottom: 20px;
-  margin-top: 100px;
+.svg__container {
+  position: relative;
+  width: 100%;
+  height: auto;
+  margin-top: 150px;
+  margin-bottom: 30px;
 }
 
+.fondH1Infos {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  z-index: 1;
+}
+
+.h1 {
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  font-size: 60px;
+  font-size: 6rem;
+  font-weight: bold;
+  text-align: center;
+  z-index: 2;
+  font-family: LemonMilk, sans-serif;
+}
+
+@media (max-width: 600px) {
+  .nom-artiste {
+    font-size: 60px;
+    font-size: 6rem;
+    -webkit-text-stroke: 2px white;
+    text-stroke: 2px white;
+    letter-spacing: 15px;
+  }
+  .fondH1Infos {
+    width: 200% !important;
+  }
+  .svg-container {
+    margin-top: 35px;
+  }
+}
 .actu {
   text-align: center;
   font-size: 32px;
@@ -1072,7 +1020,7 @@ footer {
 }
 
 .carte {
-  background-color: #D8059E;
+  background-color: #FF4FBC;
   border-radius: 10px;
   border: solid 2px black;
   width: 75%;
@@ -1085,6 +1033,7 @@ footer {
   color: white;
   text-transform: none;
   font-size: 16px;
+  font-family: Quicksand-Medium, sans-serif;
 }
 
 .date {
@@ -1172,11 +1121,12 @@ footer {
   text-align: center;
   margin: 30px 0 20px 0;
   font-size: 32px;
+  font-family: LemonMilk, sans-serif;
 }
 
 .artistes {
   width: 300px;
-  background-color: #D8059E;
+  background-color: #FF4FBC;
   padding: 20px 10px;
   border-radius: 10px;
   border: solid 2px black;
@@ -1260,9 +1210,9 @@ footer {
   top: 20px;
   left: 50%;
   transform: translateX(-50%);
-  color: white;
-  font-size: 20px;
+  color: #FF4FBC;
   z-index: 3;
+  font-family: LemonMilk, sans-serif;
 }
 
 .lieux iframe {
@@ -1332,7 +1282,7 @@ footer {
 }
 
 .btn-tarifs {
-  background-color: #D8059E;
+  background-color: #FF4FBC;
   padding: 10px 40px;
   color: white;
   border-radius: 10px;
@@ -1348,7 +1298,7 @@ footer {
 }
 
 .web {
-  background-color: #D8059E;
+  background-color: #FF4FBC;
   margin: 20px;
   border-radius: 10px;
   padding: 15px;
@@ -1399,7 +1349,7 @@ footer {
 }
 /* PARTENAIRES */
 .partenaires {
-  background-color: #D8059E;
+  background-color: #FF4FBC;
   padding: 20px;
   margin-top: -20px;
 }
@@ -1409,7 +1359,7 @@ footer {
   font-weight: bold;
   text-align: center;
   color: white;
-  background-color: #D8059E;
+  background-color: #FF4FBC;
   padding: 30px;
   margin-top: 50px;
 }
@@ -1478,7 +1428,6 @@ footer {
   letter-spacing: 30px;
 }
 
-/* Container du SVG et du h2 */
 .svg-container {
   position: relative;
   width: 100%;

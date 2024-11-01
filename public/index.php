@@ -97,8 +97,14 @@ $arrJours=array ('Dimanche', 'Lundi', 'Mardi ', 'Mercredi' , ' Jeudi', 'Vendredi
 <body>
     <?php include ($niveau . "liaisons/fragments/entete.inc.php");?>
     <main>
-    <main>
-        <h1 class="h1">Actualités</h1>
+        <img src="..\public\liaisons\images\off2.jpg" alt="" width="2000">
+    <div class="svg__container">
+    <svg class="fondH1Infos" width="1440" height="144" viewBox="0 0 1440 144" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 44.3925C0 44.3925 109.245 47.9546 179.5 33.3274C386.069 -9.68053 506.628 50.0737 721 44.3925C862.066 40.6541 939.48 11.8948 1080.5 16.4974C1223.43 21.1623 1440 44.3925 1440 44.3925V143.241C1440 143.241 1234.2 120.019 1100.16 117.607C924.022 114.438 881.805 145.161 705.6 143.241C557.582 141.628 423.649 114.032 275.76 117.607C166.455 120.25 0 143.241 0 143.241V44.3925Z" fill="#FF4FBC"/>
+        <path d="M0 29.0651C0 29.0651 109.245 32.6272 179.5 18C386.069 -25.0079 506.628 34.7463 721 29.0651C862.066 25.3267 939.48 -3.43261 1080.5 1.16998C1223.43 5.83492 1440 29.0651 1440 29.0651V127.913C1440 127.913 1234.2 104.691 1100.16 102.28C924.022 99.1109 881.805 129.834 705.6 127.913C557.582 126.3 423.649 98.7042 275.76 102.28C166.455 104.922 0 127.913 0 127.913V29.0651Z" fill="#7720D4"/>
+    </svg>
+    <h2 class="h1">Actualités</h2>
+</div>
         
         <?php
         echo '<div class="cartes_actu">';
@@ -149,73 +155,11 @@ for ($intCpt = 0; $intCpt < count($arrArtistesChoisis); $intCpt++) {
 }
 ?>
 </section>
-
-
-        <!-- <img src="#" alt="">
  
-        <h2 class="actu">Actualité</h2>
-        <div id="contenu" >
-            <div >
-                <h3 >9 Juillet 2018</h3>
-                <p >Publiée à : 08:33</p>
-                <img class="album" src="..\public\liaisons\images\actu\babaloones_w190_actu.jpg" alt="album the babalooneys">
-                <div >
-                <img class="svg" src="..\public\liaisons\images\ion_location-outline.svg" alt="">
-                <p>Scène de la famille Télé-Québec - accès libre</p>
-                </div>
-                <p>À 19 h 30, The Babalooneys (Québec), un quintette (...)</p>
-                <button>Lire la suite</button>
-            </div>
-            <div class="carte">
-                <h3>10 Juillet 2018</h3>
-                <p>Publiée à : 10:00</p>
-                <img class="album" src="..\public\liaisons\images\actu\Harvest-Breed_w190_actu.jpg" alt="album the babalooneys">
-                <div class="emplacement">
-                <img class="svg" src="..\public\liaisons\images\ion_location-outline.svg" alt="">
-                <p>Scène Caisse populaire de Québec - accès libre</p>
-                </div>
-                <p>À 17 h, le sextuor Harvest Breed (Sherbrooke) (...)</p>
-                <button>Lire la suite</button>
-            </div>
-            <div class="carte">
-                <h3>9 Juillet 2018</h3>
-                <p>Publiée à : 08:33</p>
-                <img class="album" src="..\public\liaisons\images\actu\LATourelle-Orkestra_w190_actu.jpg" alt="album the babalooneys">
-                <div class="emplacement">
-                <img class="svg" src="..\public\liaisons\images\ion_location-outline.svg" alt="">
-                <p>Rue Cartier/Scène Brunet - accès libre</p>
-                </div>
-                <p>À 17 h 30, LaTourelle Orkestra (Québec) vous (...)</p>
-                <button>Lire la suite</button>
-            </div>
-  -->
-           
-            <!-- <div class="artistes"><h2>Artistes à d'écouvrir</h2>
-                <div class="artsiteA">
-                    <img src="#" alt="Artistes">
-                    <h3>Diamond Rings</h3>
-                    <p>Véritable coqueluche du courant électro/pop kitsch, Diamond Rings n'a plus besoin de présentation. De son habillement excentrique sur scène où ceinture dorée, make up arc-en-ciel, leggings et bijoux démodés sont ressuscités, en passant par ses textes outrageusement naïfs, Diamond  </p>
-                </div>
-                <div class="artsiteB">
-                    <h3>Diamond Rings</h3>
-                    <p>Véritable coqueluche du courant électro/pop kitsch, Diamond Rings n'a plus besoin de présentation. De son habillement excentrique sur scène où ceinture dorée, make up arc-en-ciel, leggings et bijoux démodés sont ressuscités, en passant par ses textes outrageusement naïfs, Diamond  </p>
-                    <img src="#" alt="Artistes">
-                </div>
-                <div class="artsiteA">
-                    <img src="#" alt="Artistes">
-                    <h3>Diamond Rings</h3>
-                    <p>Véritable coqueluche du courant électro/pop kitsch, Diamond Rings n'a plus besoin de présentation. De son habillement excentrique sur scène où ceinture dorée, make up arc-en-ciel, leggings et bijoux démodés sont ressuscités, en passant par ses textes outrageusement naïfs, Diamond  </p>
-                </div>
-                <div class="artsiteB">
-                    <h3>Diamond Rings</h3>
-                    <p>Véritable coqueluche du courant électro/pop kitsch, Diamond Rings n'a plus besoin de présentation. De son habillement excentrique sur scène où ceinture dorée, make up arc-en-ciel, leggings et bijoux démodés sont ressuscités, en passant par ses textes outrageusement naïfs, Diamond  </p>
-                    <img src="#" alt="Artistes">
-                </div> -->
-               
                 <div class="lieux">
                     <h3>Lieux de spéctacles</h3>
                     <img src="liaisons\images\image7.jpg" alt="foule">
-                    <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1NCNDAUUorKPuCK3pHCYjet3qiz469kg&ehbc=2E312F&noprof=1" width="320" height="150"></iframe>
+                    <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1NCNDAUUorKPuCK3pHCYjet3qiz469kg&ehbc=2E312F&noprof=1" width="300" height="175"></iframe>
                 </div>
                 <h3 class="h3_tarif" id="tarifs">Tarifs</h3>
                 <section class="tarifs">
@@ -251,27 +195,27 @@ for ($intCpt = 0; $intCpt < count($arrArtistesChoisis); $intCpt++) {
 <h2 class="h2_partenaires" id="partenaires">Les passeports sont aussi disponibles en prévente chez nos partenaires :</h2>
 <section class="partenaires" >
     <div class="carte-partenaires">
-        <img src="https://fakeimg.pl/180x180" alt="logo du partenaire"><br>
+        <img src="liaisons\images\partenaires\ninkasi.png" alt="logo du partenaire"><br>
         <a href="https://maps.app.goo.gl/gT3yxpwCdNnYioiV7">840 Avenue Honoré-Mercier, Québec</a>
     </div>
     <div class="carte-partenaires">
-        <img src="https://fakeimg.pl/180x180" alt="logo du partenaire"><br>
+        <img src="liaisons\images\partenaires\erico.png" alt="logo du partenaire"><br>
         <a href="https://maps.app.goo.gl/4qnNNcaJrcRiQZmS9">634 Rue Saint-Jean, Québec</a>
     </div>
     <div class="carte-partenaires">
-        <img src="https://fakeimg.pl/180x180" alt="logo du partenaire"><br>
+        <img src="liaisons\images\partenaires\sacrilege.png" alt="logo du partenaire"><br>
         <a href="https://maps.app.goo.gl/gCHcXerXuiCc45t6A">447 Rue Saint-Jean, Québec</a>
     </div>
     <div class="carte-partenaires">
-        <img src="https://fakeimg.pl/180x180" alt="logo du partenaire"><br>
+        <img src="liaisons\images\partenaires\bonnetdane.png" alt="logo du partenaire"><br>
         <a href="https://maps.app.goo.gl/bZfbZ1aekpk8jPQs9">298 Rue Saint-Jean, Québec</a>
     </div>
     <div class="carte-partenaires">
-        <img src="https://fakeimg.pl/180x180" alt="logo du partenaire"><br>
+        <img src="liaisons\images\partenaires\melomane.png" alt="logo du partenaire"><br>
         <a href="https://maps.app.goo.gl/Jk8fiWAJUZME3Han9">248 rue Saint-Jean, Québec</a>
     </div>
     <div class="carte-partenaires">
-        <img src="https://fakeimg.pl/180x180" alt="logo du partenaire"><br>
+        <img src="liaisons\images\partenaires\knockout.png" alt="logo du partenaire"><br>
         <a href="https://maps.app.goo.gl/4gbw4B4DhNY7jeYS7">832 St-Joseph Est, Québec</a>
     </div>
 </section>
