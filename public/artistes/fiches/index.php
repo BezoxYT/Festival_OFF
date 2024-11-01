@@ -131,7 +131,7 @@ AND styles_artistes.artiste_id <> " . $id_artiste;
 <body>
 <?php include $niveau . 'liaisons/fragments/entete.inc.php'; ?>
 <div class="container-banniere">
-    <img class="imageBanniereFicheArtiste" src="liaisons/images/artistes/<?php echo $id_artiste; ?>_<?php echo $arrInfosArtiste['nom_artiste']; ?>/1.jpg" alt="imagebanniere">
+    <img class="imageBanniereFicheArtiste" src="liaisons/images/artistes/<?php echo $id_artiste; ?>_1.jpg" alt="imagebanniere">
     
     <p class="nom-artiste"><?php echo $arrInfosArtiste['nom_artiste']; ?></p>
 </div>
@@ -144,7 +144,7 @@ AND styles_artistes.artiste_id <> " . $id_artiste;
     <h2 class="h2Infos">Informations</h2>
 </div>
 <div class="containerPhotoInfos">
-<img class="ImageInfos" src="liaisons/images/artistes/<?php echo $id_artiste; ?>_<?php echo $arrInfosArtiste['nom_artiste']; ?>/<?php echo rand(1, 5) ?>.jpg" alt="imagebanniere">
+<img class="ImageInfos" src="liaisons/images/artistes/<?php echo $id_artiste; ?>_<?php echo rand(1, 5) ?>.jpg" alt="imagebanniere">
 
 
     <div class="infosArtiste">
@@ -171,7 +171,7 @@ if (count($arrEvenements) > 0) {
         
         echo '<p class="date_evenement">' . $jourSemaineTexte . ' ' . $evenement['jour_evenement'] . ' ' . $moisTexte . ' ' . $evenement['annee_evenement'] . ' à ' . $evenement['heure_evenement'] . 'h' . $evenement['minute_evenement'] . '</p>';
         
-        echo '<img class="image_evenement" src="liaisons/images/artistes/' . $id_artiste . '_' . $arrInfosArtiste['nom_artiste'] . '/' . rand(1, 5) . '.jpg" alt="image Evenement">'; 
+        echo '<img class="image_evenement" src="liaisons/images/artistes/' . $id_artiste . '_' .  rand(1, 5) . '.jpg" alt="image Evenement">'; 
 
         // Ajouter la ligne après chaque événement sauf le dernier
         if ($index < count($arrEvenements) - 1) {
@@ -194,7 +194,7 @@ if (count($arrArtisteSimilaire) > 0) {
         echo '<div class="container_artiste_similaire">';
         echo '<a class="lien_artiste_similaire" href="artistes/fiches/index.php?id_artiste=' . $artisteSimilaire['id_artiste'] . '">';
         echo $artisteSimilaire['nom_artiste'];
-        echo '<img class="image_artiste_similaire" src="liaisons/images/artistes/' . $artisteSimilaire['id_artiste'] . '_' . $artisteSimilaire['nom_artiste'] . '/' . rand(1, 5) . '.jpg" alt="imagebanniere">';
+        echo '<img class="image_artiste_similaire" src="liaisons/images/artistes/' . $artisteSimilaire['id_artiste'] . '_' . rand(1, 5) . '.jpg" alt="imagebanniere">';
         echo '</a>';
         echo '</div>';
     }
@@ -204,4 +204,5 @@ if (count($arrArtisteSimilaire) > 0) {
 ?>
 
 </body>
+<?php include $niveau . 'liaisons/fragments/piedDePage.inc.php'; ?>
 </html>
