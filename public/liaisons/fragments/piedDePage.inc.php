@@ -50,4 +50,4 @@
     <h5 class="copyrights">@2009-2024 Festival OFF Tous droits réservés</h5>
 </footer>
 
-<script src="liaisons/js/_menu.js"></script>
+<!-- <script src="liaisons/js/_menu.js"></script> -->
