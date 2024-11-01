@@ -1,8 +1,102 @@
-$bleupieddepage:#358ae0;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-.piedDePage{
-  background-color: #68a8e8;
-  &__copyRights{
+.container{
+  max-width: 1000px;
+  margin: auto;
+}
+.row{
+  display: flex;
+  flex-wrap: wrap;
+}
+ul{
+  list-style: none;
+}
+.footer__carte{
+  width: 25%;
+  padding: 70px 20px;
+  
+}
+.footer__carte h4{
+  margin-bottom: 30px;
+  position: relative;
+  color: white;
+  font-size: 30px;
+  font-weight: 100;
+}
+.footer__carte h4::before{
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  background-color: #D8059E;
+  height: 2px;
+  box-sizing: border-box;
+  width: 50px;
+}
+.footer__carte ul li:not(:last-child){
+margin-bottom: 10px;
+}
+.footer__carte ul li a{
+text-decoration: none;
+color: white;
+display: block;
+transition: all 0.3s ease;
+}
+.footer__carte ul li a:hover{
+  padding-left: 8px;
+  }
+@media (max-width:600px) {
+  .footer__carte {
+    width: 100%;
 
   }
+}
+
+
+
+.off{
+  display: flex;
+  margin: 0 auto;
+  width: 50%;
+  height: 80%;
+  padding: 20px 0;
+
+}
+@media screen and (min-width:600px){
+  .off{
+width: 15%;
+  }
+}
+footer{
+  background-color: #7720D4;
+}
+.h4__festival{
+  text-align: center;
+  font-size: 30px;
+  color: white;
+}
+.contact{
+  text-align: center;
+  padding-top: 20px;
+}
+.contact a{
+  color: white;
+  display: block;
+  margin-bottom: 10px;
+}
+.reseaux{
+  display: flex;
+  justify-content: center; 
+  gap: 20px;
+  padding: 20px 0;
+}
+
+.copyrights{
+  text-align: center;
+  color: white;
+  padding-bottom: 20px;
 }
