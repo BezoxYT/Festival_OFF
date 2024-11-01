@@ -8,33 +8,41 @@
     
     <nav id="menu">
         <div class="logo">
+            <a href="index.php">
             <img src="liaisons/images/png/logoOff_blanc.png" alt="Logo Festival OFF de Québec">
+        </a>
         </div>
         <ul class="nav-links">
-            <li><a href="#">LE OFF</a></li>
-            <li class="dropdown">
-                <a href="#">PROGRAMMATION <span class="arrow">▼</span></a>
+        <li class="dropdown">
+                <a href="index.php">LE OFF <span class="arrow">▼</span></a>
                 <ul class="dropdown-content">
-                    <li><a href="#">Jour 1</a></li>
-                    <li><a href="#">Jour 2</a></li>
-                    <li><a href="#">Jour 3</a></li>
+                    <li><a href="#">Lieux</a></li>
+                    <li><a href="#">Tarifs</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="<?php echo $niveau;?>public/programmation/index.php">PROGRAMMATION <span class="arrow">▼</span></a>
+                <ul class="dropdown-content">
+                    <li><a href="#">Par lieu</a></li>
+                    <li><a href="#">Par Dates</a></li>
                 </ul>
             </li>
             <li class="dropdown">
                 <a href="#">PARTENAIRES <span class="arrow">▼</span></a>
                 <ul class="dropdown-content">
-                    <li><a href="#">Partenaire 1</a></li>
-                    <li><a href="#">Partenaire 2</a></li>
+                    <li><a href="#">Partenaires actuels</a></li>
+                    <li><a href="#">Devenir partenaire</a></li>
                 </ul>
             </li>
             <li class="dropdown">
-                <a href="#">ARTISTES <span class="arrow">▼</span></a>
+                <a href="<?php echo $niveau;?>artistes/index.php">ARTISTES <span class="arrow">▼</span></a>
                 <ul class="dropdown-content">
-                    <li><a href="#">Artiste 1</a></li>
-                    <li><a href="#">Artiste 2</a></li>
+                    <li><a href="#">Artistes A-Z</a></li>
+                    <li><a href="#">Par style musical</a></li>
                 </ul>
             </li>
-            <li><a href="#" class="button">Acheter mon passeport</a></li>
+            <li><a href="#" class="btn_Acheter_Passeport">Acheter mon passeport</a></li>
         </ul>
     </nav>
     

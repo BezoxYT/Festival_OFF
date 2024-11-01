@@ -9,15 +9,19 @@
 // Permettez-vous d'utiliser un nom de variable plus explicite si la suggestion de name-that-color est trop étrange
 
 /* Couleurs de base */
-$bleuMoyen: #358ae0;
-$bleuPale: #68a8e8;
-$vertLime: #bbd531;
-$bleuMinuit: #012d61;
-$bleuMarin: #2678B5;
+$HotPink: #FF4FBC;
+$blanc: white;
+$PurpleHeart: #7720D4;
+$noir : black;
 
-$bleuMoyenTransparent : transparentize($bleuMoyen, 0.50);
+/* Transparent */
+$HotPinkTransparent: transparentize($HotPink, 0.5);
+$PurpleHeartTransparent: transparentize($PurpleHeart, 0.5);
+
 
 /* Autres couleurs */
+$MineShaft: #333;
+$Cranberry: #E04A7A;
 
 
 /** Points de rupture **/

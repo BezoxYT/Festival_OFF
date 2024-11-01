@@ -1,7 +1,3 @@
-/**
-* @author Prenom Nom courriel
-*/
-
 /******** Typographie *********/
 
 // Fonction pour convertir une valeur de font-size en pixels à son équivalent rem
@@ -22,9 +18,18 @@
   font-family: LemonMilk , sans-serif;
   src: 	url('../fonts/LemonMilk.otf') format('truetype');
 }
+@font-face{
+  font-family: Invisible-ExtraBold, sans-serif;
+  src: url('../fonts/Invisible-ExtraBold.otf') format('truetype');
+}
+@font-face{
+  font-family: Quicksand-Medium, sans-serif;
+  src: url('../fonts/Quicksand-Medium.otf') format('truetype');
+}
 
 $fontePrimaire : LemonMilk, sans-serif;
-$fonteSecondaire : Arial, sans-serif;
+$fonteSecondaire : Quicksand-Medium, sans-serif;
+$fonteTertiaire : Invisible-ExtraBold, sans-serif;
 
 
 /**** Typographie responsive ****/
@@ -34,11 +39,12 @@ html {
 }
 
 body {
-  font-family: $fonteSecondaire;
+  font-family: $fontePrimaire;
   @include fontSize(16px); /* 16px pour toutes les largeurs d'écran */
   line-height: 1.375; /* facteur multiplicateur de la taille de la police 1.375x16=22 */
   @media (min-width: 601px) {
-
+    @include fontSize(18px); /* 18px pour les écrans de 601px et plus */
+    line-height: 1.5; /* facteur multiplicateur de la taille de la police 1.5x18=27 */
   }
 }
 
@@ -61,7 +67,7 @@ h1,
     padding-bottom: 15px;
     position: relative;
     &:after {
-      background-color: $bleuMoyen;
+      background-color: $HotPinkTransparent;
       content: "";
       display: inline-block;
       width: 150px;
