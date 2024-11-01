@@ -413,6 +413,7 @@ th {
 /** Polices de caractères **/
 /** Palette de couleurs **/
 /* Couleurs de base */
+/* Transparent */
 /* Autres couleurs */
 /** Points de rupture **/
 /** Mixins **/
@@ -458,13 +459,18 @@ th {
 
 /****** BASE ********************************/
 /** Typographie **/
-/**
-* @author Prenom Nom courriel
-*/
 /******** Typographie *********/
 @font-face {
   font-family: LemonMilk, sans-serif;
   src: url("../fonts/LemonMilk.otf") format("truetype");
+}
+@font-face {
+  font-family: Invisible-ExtraBold, sans-serif;
+  src: url("../fonts/Invisible-ExtraBold.otf") format("truetype");
+}
+@font-face {
+  font-family: Quicksand-Medium, sans-serif;
+  src: url("../fonts/Quicksand-Medium.otf") format("truetype");
 }
 /**** Typographie responsive ****/
 html {
@@ -472,12 +478,21 @@ html {
 }
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: LemonMilk, sans-serif;
   font-size: 16px;
   font-size: 1.6rem;
   /* 16px pour toutes les largeurs d'écran */
   line-height: 1.375; /* facteur multiplicateur de la taille de la police 1.375x16=22 */
 }
+@media (min-width: 601px) {
+  body {
+    font-size: 18px;
+    font-size: 1.8rem;
+    /* 18px pour les écrans de 601px et plus */
+    line-height: 1.5; /* facteur multiplicateur de la taille de la police 1.5x18=27 */
+  }
+}
+
 h1,
 .titreNiveau1,
 h2,
@@ -503,7 +518,7 @@ h1--desktop,
 }
 h1--desktop:after,
 .titreNiveau1--desktop:after {
-  background-color: #358ae0;
+  background-color: rgba(255, 79, 188, 0.5);
   content: "";
   display: inline-block;
   width: 150px;
@@ -537,7 +552,7 @@ h3--desktop,
 }
 
 .texte {
-  font-family: Arial, sans-serif;
+  font-family: Quicksand-Medium, sans-serif;
   font-size: 16px;
   font-size: 1.6rem;
   line-height: 1.375;
@@ -576,17 +591,17 @@ h3--desktop,
   text-decoration: none;
   border-radius: 18px;
   padding: 0.5em 1em;
-  background-color: #bbd531;
+  background-color: #FF4FBC;
   color: black;
 }
 .bouton:after {
   margin-left: 0.4em;
 }
 .bouton:hover {
-  background-color: rgba(187, 213, 49, 0.75);
+  background-color: rgba(255, 79, 188, 0.5);
 }
 .bouton:active {
-  background-color: rgba(187, 213, 49, 0.5);
+  background-color: rgba(255, 79, 188, 0.5);
 }
 .bouton--inverse {
   text-decoration: none;
@@ -596,10 +611,10 @@ h3--desktop,
   border: 2px solid black;
 }
 .bouton--inverse:hover {
-  border-color: rgba(187, 213, 49, 0.75);
+  border-color: rgba(255, 79, 188, 0.5);
 }
 .bouton--inverse:active {
-  border-color: rgba(187, 213, 49, 0.5);
+  border-color: rgba(255, 79, 188, 0.5);
 }
 
 /** Grille 12 colones **/
@@ -679,67 +694,6 @@ Effet de survol : #f5ae09
 Effet actif : #f4d07c
 */
 /****** Base commune *******/
-/* Bouton du menu */
-.menu__controle {
-  background-color: #68a8e8;
-  border: none;
-  padding: 10px;
-  min-width: 40px;
-  width: 80px;
-}
-@media (min-width: 601px) {
-  .menu__controle {
-    display: none;
-  }
-}
-.menu__controle:hover, .menu__controle:active {
-  background-color: #358ae0;
-}
-.menu__controle:focus {
-  /**
-   * Les styles du navigateur utilisent la règle outline pour définir
-   * l'état focus des éléments interactifs.
-   * Vous pouvez redéfinir cette règle ou remplacer par d'autres styles
-   * mieux adaptés à la direction visuelle.
-   * MAIS il faut souligner l'état focus et le tester au clavier.
-   */
-  outline-offset: -5px;
-  outline: #012d61 auto 5px;
-}
-.menu__liste {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  max-height: none;
-}
-@media (min-width: 601px) {
-  .menu__listeItem {
-    display: inline-block;
-  }
-}
-.menu__lien {
-  border: 1px solid #012d61;
-  background-color: #68a8e8;
-  display: block;
-  padding: 5px 10px;
-}
-.menu__lien:link, .menu__lien:visited {
-  text-decoration: none;
-  color: inherit;
-}
-.menu__lien:hover, .menu__lien:active {
-  background-color: #358ae0;
-}
-.menu__lien:focus {
-  /*outline: none;
-  border-left: 5px solid #f5ae09;*/
-  outline-offset: -5px;
-  outline: #f5ae09 auto 5px;
-}
-.menu__lien--actif {
-  border-left: 5px solid #f4d07c;
-}
-
 /* Si le javascript est activé */
 /* Pour des raisons d'accessibilité, on ne cache le menu mobile
  * que si Javascript est activé. De cette façon, s'il est désactivé,
@@ -761,18 +715,10 @@ Effet actif : #f4d07c
 }
 
 /****** LAYOUT *****************************/
-.entete {
-  background-color: #358ae0;
-}
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-body {
-  font-family: "LemonMilk", sans-serif;
-  background-color: white;
 }
 
 header {
@@ -817,7 +763,7 @@ nav {
   margin-left: 5px;
 }
 
-.button {
+.btn_Acheter_Passeport {
   background-color: #FF4FBC;
   padding: 10px 20px;
   border-radius: 5px;
@@ -826,18 +772,20 @@ nav {
   transition: background-color 0.3s;
 }
 
-.button:hover {
+.btn_Acheter_Passeport:hover {
   background-color: #E04A7A;
 }
 
 /* Dropdown content */
 .dropdown-content {
+  list-style: none;
   display: none;
   position: absolute;
-  background-color: #7A28C7;
+  background-color: #FF4FBC;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  z-index: 4;
+  z-index: 7;
   top: 100%;
+  width: 150px;
 }
 
 .dropdown-content li {
@@ -849,11 +797,32 @@ nav {
 }
 
 .dropdown-content li a:hover {
-  background-color: #6B209A;
+  color: #333;
 }
 
 .dropdown:hover .dropdown-content {
   display: block;
+}
+
+/* SVG wave styles */
+.wave1 {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  z-index: 2;
+}
+
+.wave2 {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  z-index: 1;
 }
 
 /* Burger menu styles */
@@ -885,8 +854,8 @@ nav {
     cursor: pointer;
     width: 2rem;
     height: 2rem;
-    right: 1rem;
-    top: 1rem;
+    right: 3rem;
+    top: 7rem;
     display: flex;
     justify-content: space-between;
     flex-direction: column;
@@ -894,7 +863,7 @@ nav {
   }
   #burger div {
     height: 2px;
-    background-color: #fff;
+    background-color: white;
     transition: 0.5s;
   }
   #menu-toggle:checked ~ #burger div:nth-child(1) {
@@ -910,17 +879,21 @@ nav {
     transform: translateX(0);
   }
   .wave1 {
+    width: 150% !important;
     height: auto;
   }
   .wave2 {
-    width: 100%;
     height: auto;
+    width: 150% !important;
+  }
+  .banner {
+    margin-top: 0px !important;
   }
 }
 /* Banner styles */
 .banner {
+  margin-top: 50px;
   color: white;
-  padding: 50px;
   text-align: center;
   position: relative;
   z-index: 3;
@@ -933,31 +906,6 @@ nav {
 .banner p {
   font-size: 24px;
   color: #FF4FBC;
-}
-
-/* SVG wave styles */
-.wave1 {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  height: auto;
-  z-index: 2;
-}
-
-.wave2 {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: auto;
-  z-index: 1;
-}
-
-body {
-  font-family: "LemonMilk", sans-serif;
-  background-color: aqua;
 }
 
 * {
@@ -1498,6 +1446,252 @@ footer {
   .h2_partenaires {
     font-size: 25px;
     margin-bottom: 20px;
+  }
+}
+.titreVoiciArtistes {
+  margin-top: 400px;
+}
+
+.container-banniere {
+  position: relative;
+  width: 100%;
+}
+
+.imageBanniereFicheArtiste {
+  width: 100%;
+  display: block;
+}
+
+.nom-artiste {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 320px;
+  font-size: 32rem;
+  font-weight: bold;
+  text-align: center;
+  z-index: 1;
+  color: transparent;
+  -webkit-text-stroke: 8px white;
+  text-stroke: 8px white;
+  letter-spacing: 30px;
+}
+
+/* Container du SVG et du h2 */
+.svg-container {
+  position: relative;
+  width: 100%;
+  height: auto;
+  margin-top: 150px;
+}
+
+.fondH1Infos {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  z-index: 1;
+}
+
+.h2Infos {
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  font-size: 60px;
+  font-size: 6rem;
+  font-weight: bold;
+  text-align: center;
+  z-index: 2;
+}
+
+.containerPhotoInfos {
+  display: flex;
+  align-items: center;
+  margin-top: 300px;
+  position: relative;
+  width: 100%;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+/* Style de l'image */
+.ImageInfos {
+  width: 25%;
+  height: auto;
+  display: block;
+  border: 8px solid #7720D4;
+  border-radius: 1.5%;
+  position: relative;
+  z-index: 2;
+}
+
+/* Style pour le conteneur d'informations */
+.infosArtiste {
+  margin-left: 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.provenance-artiste,
+.style-musical,
+.site-web-artiste {
+  margin: 25px 0;
+  text-align: center;
+  font-family: Quicksand-Medium, sans-serif;
+  font-size: 22px;
+  font-size: 2.2rem;
+}
+
+.site-web-artiste a {
+  color: #7720D4;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.site-web-artiste a:hover {
+  color: #FF4FBC;
+}
+
+.description-artiste {
+  font-family: Quicksand-Medium, sans-serif;
+  text-align: center;
+  font-size: 25px;
+  font-size: 2.5rem;
+  max-width: 50%;
+  margin: 0 auto;
+  margin-top: 100px;
+}
+
+.container_evenement {
+  background-color: #7720D4;
+  padding: 20px;
+  max-width: 50%;
+  margin: 0 auto;
+  margin-top: 200px;
+  border-radius: 10px;
+  border: 4px solid #FF4FBC;
+}
+
+.line_evenement {
+  border-top: 2px solid #FF4FBC;
+  margin-top: 50px;
+  padding-bottom: 30px;
+  width: 100%;
+}
+
+.image_evenement {
+  width: 60%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: 1.5%;
+  border: 8px solid #FF4FBC;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.lieu_evenement {
+  font-family: Quicksand-Medium, sans-serif;
+  font-size: 22px;
+  font-size: 2.2rem;
+  text-align: center;
+  color: white;
+}
+
+.date_evenement {
+  font-family: Quicksand-Medium, sans-serif;
+  font-size: 25px;
+  font-size: 2.5rem;
+  text-align: center;
+  color: white;
+}
+
+.h2_similaire {
+  font-family: LemonMilk, sans-serif;
+  font-size: 40px;
+  font-size: 4rem;
+  text-align: center;
+  margin-top: 130px;
+  margin-bottom: 50px;
+}
+
+.container_artiste_similaire {
+  background-color: #7720D4;
+  margin: 0 auto;
+  max-width: 50%;
+  margin-bottom: 50px;
+  border-radius: 10px;
+  border: 7px solid #FF4FBC;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.container_artiste_similaire:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.lien_artiste_similaire {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 30px;
+  font-size: 3rem;
+  display: block;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.image_artiste_similaire {
+  width: 55%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: 1.5%;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  border: 8px solid #FF4FBC;
+  border-bottom: 0;
+  margin-top: 20px;
+  margin-bottom: 0px;
+}
+
+/* Styles adaptatifs pour petits écrans */
+@media (max-width: 600px) {
+  .nom-artiste {
+    font-size: 60px;
+    font-size: 6rem;
+    -webkit-text-stroke: 2px white;
+    text-stroke: 2px white;
+    letter-spacing: 15px;
+  }
+  .fondH1Infos {
+    width: 200% !important;
+  }
+  .h2Infos {
+    font-size: 30px;
+    font-size: 3rem;
+    bottom: 32px;
+  }
+  .svg-container {
+    margin-top: 35px;
+  }
+  .containerPhotoInfos {
+    flex-direction: column;
+    margin-top: 100px;
+  }
+  .ImageInfos {
+    width: 70%;
+    margin-bottom: 50px;
+  }
+  .container_evenement {
+    max-width: 90%;
+  }
+  .container_artiste_similaire {
+    max-width: 90%;
   }
 }
 

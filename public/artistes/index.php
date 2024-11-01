@@ -207,9 +207,9 @@ $pdosResultatArtisteVedette->closeCursor();
         }
     }
     ?>
-    <h1>Voici les artiste selon:  <?php echo $styleafficher['nom']; ?></h1>
+    <h1 class="titreVoiciArtistes">Voici les artiste selon:  <?php echo $styleafficher['nom']; ?></h1>
     <?php foreach ($arrParticipants as $participant) { ?>
-    <a href='public/artistes/fiches/index.php?id_artiste=<?php echo $participant["id_artiste"]; ?>'>
+    <a href='artistes/fiches/index.php?id_artiste=<?php echo $participant["id_artiste"]; ?>'>
         <?php echo $participant["nom_artiste"]; ?>
     </a>
     <br>
@@ -217,11 +217,11 @@ $pdosResultatArtisteVedette->closeCursor();
     <br><br>
 <?php } ?>
     <br><br>
-    <a href="public/artistes/index.php?id_style=0">Tous les styles</a>
+    <a href="artistes/index.php?id_style=0">Tous les styles</a>
     <br><br>
     <?php
     foreach ($arrStyles as $style) { ?>
-        <a href='public/artistes/index.php?id_style=<?php echo $style["id_style"]; ?>'> 
+        <a href='artistes/index.php?id_style=<?php echo $style["id_style"]; ?>'> 
     <?php echo $style["nom_style"]; ?>
 </a>
 <br><br>
@@ -234,7 +234,7 @@ $pdosResultatArtisteVedette->closeCursor();
 for($intCpt=0; $intCpt < count($arrArtistesChoisis); $intCpt++) {
     ?>
     <li>
-        <a href='public/artistes/fiches/index.php?id_artiste=<?php echo $arrArtistesChoisis[$intCpt]['id_artiste'];?>'>
+        <a href='artistes/fiches/index.php?id_artiste=<?php echo $arrArtistesChoisis[$intCpt]['id_artiste'];?>'>
             <?php echo $arrArtistesChoisis[$intCpt]['nom_artiste'];?>
         </a>
     </li>
@@ -246,7 +246,7 @@ for($intCpt=0; $intCpt < count($arrArtistesChoisis); $intCpt++) {
 </ul>
 		<?php if($id_page>0){
 			//Si la page courante n'est pas la première, afficher bouton précédent?>
-			<a href='public/artistes/index.php?id_page=<?php echo $id_page-1;?>
+			<a href='artistes/index.php?id_page=<?php echo $id_page-1;?>
             &id_style=<?php echo $id_style;?>'>Précédent</a>
 		<?php }
 
@@ -259,7 +259,7 @@ for($intCpt=0; $intCpt < count($arrArtistesChoisis); $intCpt++) {
                 }else{
                     //Sinon, afficher le numéro avec un lien
                     ?>
-                    <a href='public/artistes/index.php?id_page=<?php echo $i;?>&id_style=<?php echo $id_style;?>'>
+                    <a href='artistes/index.php?id_page=<?php echo $i;?>&id_style=<?php echo $id_style;?>'>
                         <?php echo ($i+1);?>
                     </a>
                     <?php
@@ -270,7 +270,7 @@ for($intCpt=0; $intCpt < count($arrArtistesChoisis); $intCpt++) {
 
 		if($id_page<$nbPages-1){
 			//Si la page courante n'est pas la dernière, afficher bouton suivant?>
-			<a href='public/artistes/index.php?id_page=<?php echo $id_page+1;?>&id_style=<?php echo $id_style;?>'>Suivant</a>
+			<a href='artistes/index.php?id_page=<?php echo $id_page+1;?>&id_style=<?php echo $id_style;?>'>Suivant</a>
 		<?php } ?>
         
 
