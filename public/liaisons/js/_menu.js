@@ -18,7 +18,6 @@ var menu = {
 
   configurerNav: function ()
   {
-    console.log("allo")
     //********** Création du bouton du menu mobile
     document.body.classList.add('js');
     // On sélectionne le menu dans le HTML
