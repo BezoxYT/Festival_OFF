@@ -139,7 +139,7 @@ color: $MineShaft;
   width: 2rem;
   height: 2rem;
   right: 3rem;
-  top: 7rem;
+  top: 5rem;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
@@ -168,15 +168,15 @@ color: $MineShaft;
   transform: translateX(0);
 }
 .wave1{
-  width: 150%!important;
-  height: auto;
+  width: 500%!important;
+  max-width: 100%;
 
 }
 .wave2{
-  height: auto;
-  width: 150%!important;
+  height: 200%!important;
+  width: 100%!important;
 }
-.banner{
+.bannerr{
   margin-top: 0px!important;
 }
 }
@@ -184,7 +184,7 @@ color: $MineShaft;
 
 
 /* Banner styles */
-.banner {
+.bannerr {
   margin-top: 50px;
   color: $blanc;
   text-align: center;
@@ -192,11 +192,11 @@ color: $MineShaft;
   z-index: 3;
 }
 
-.banner h1 {
+.bannerr h1 {
   font-size: 36px;
 }
 
-.banner p {
+.bannerr p {
   font-size: 24px;
   color: $HotPink;
 }

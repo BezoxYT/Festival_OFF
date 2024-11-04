@@ -118,79 +118,78 @@ AND styles_artistes.artiste_id <> " . $id_artiste;
 </head>
 <body>
 <?php include $niveau . 'liaisons/fragments/entete.inc.php'; ?>
-<div class="container-banniere">
-    <img class="imageBanniereFicheArtiste" src="liaisons/images/artistes/<?php echo $id_artiste; ?>_1.jpg" alt="imagebanniere">
-    
-    <p class="nom-artiste"><?php echo $arrInfosArtiste['nom_artiste']; ?></p>
+<div class="banner">
+    <img class="banner__image" src="liaisons/images/artistes/<?php echo $id_artiste; ?>_1.jpg" alt="Bannière de l'artiste">
+    <p class="banner__artist-name"><?php echo $arrInfosArtiste['nom_artiste']; ?></p>
 </div>
 
-<div class="svg-container">
-    <svg class="fondH1Infos" width="" height="144" viewBox="0 0 1440 144" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M0 44.3925C0 44.3925 109.245 47.9546 179.5 33.3274C386.069 -9.68053 506.628 50.0737 721 44.3925C862.066 40.6541 939.48 11.8948 1080.5 16.4974C1223.43 21.1623 1440 44.3925 1440 44.3925V143.241C1440 143.241 1234.2 120.019 1100.16 117.607C924.022 114.438 881.805 145.161 705.6 143.241C557.582 141.628 423.649 114.032 275.76 117.607C166.455 120.25 0 143.241 0 143.241V44.3925Z" fill="#FF4FBC"/>
-        <path d="M0 29.0651C0 29.0651 109.245 32.6272 179.5 18C386.069 -25.0079 506.628 34.7463 721 29.0651C862.066 25.3267 939.48 -3.43261 1080.5 1.16998C1223.43 5.83492 1440 29.0651 1440 29.0651V127.913C1440 127.913 1234.2 104.691 1100.16 102.28C924.022 99.1109 881.805 129.834 705.6 127.913C557.582 126.3 423.649 98.7042 275.76 102.28C166.455 104.922 0 127.913 0 127.913V29.0651Z" fill="#7720D4"/>
+<div class="info-header">
+    <svg class="info-header__background" width="1440" height="144" viewBox="0 0 1440 144" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 44.3925C0 44.3925 109.245 47.9546 179.5 33.3274C386.069 -9.68053 506.628 50.0737 721 44.3925C862.066 40.6541 939.48 11.8948 1080.5 16.4974C1223.43 21.1623 1440 44.3925 1440 44.3925V143.241C1440 143.241 1234.2 120.019 1100.16 117.607C924.022 114.438 881.805 145.161 705.6 143.241C557.582 141.628 423.649 114.032 275.76 117.607C166.455 120.25 0 143.241 0 143.241V44.3925Z" fill="#FF4FBC"/>
+    <path d="M0 29.0651C0 29.0651 109.245 32.6272 179.5 18C386.069 -25.0079 506.628 34.7463 721 29.0651C862.066 25.3267 939.48 -3.43261 1080.5 1.16998C1223.43 5.83492 1440 29.0651 1440 29.0651V127.913C1440 127.913 1234.2 104.691 1100.16 102.28C924.022 99.1109 881.805 129.834 705.6 127.913C557.582 126.3 423.649 98.7042 275.76 102.28C166.455 104.922 0 127.913 0 127.913V29.0651Z" fill="#7720D4"/>
     </svg>
-    <h2 class="h2Infos">Informations</h2>
+    <h2 class="info-header__title">Informations</h2>
 </div>
-<div class="containerPhotoInfos">
-<img class="ImageInfos" src="liaisons/images/artistes/<?php echo $id_artiste; ?>_<?php echo rand(1, 5) ?>.jpg" alt="imagebanniere">
 
+<div class="artist-info">
+    <img class="artist-info__photo" src="liaisons/images/artistes/<?php echo $id_artiste; ?>_<?php echo rand(1, 5) ?>.jpg" alt="Image de l'artiste">
+    <div class="artist-info__details">
+        <?php
+        echo "<p class='artist-info__provenance'>" . $arrInfosArtiste['provenance_artiste'] . ", " . $arrInfosArtiste['pays_artiste'] . "</p>";
+        echo "<p class='artist-info__style'>" . $arrInfosArtiste['style_musical'] . "</p>";
+        echo "<p class='artist-info__website'><a class='artist-info__website__link' href='" . $arrInfosArtiste['site_web_artiste'] . "'>" . $arrInfosArtiste['site_web_artiste'] . "</a></p>";
+        ?>
+    </div>
+</div>
 
-    <div class="infosArtiste">
+<p class="artist-description"><?php echo $arrInfosArtiste['description_artiste']; ?></p>
+
+<div class="event-list">
     <?php
-    echo "<p class='provenance-artiste'>" . $arrInfosArtiste['provenance_artiste'] . ", " . $arrInfosArtiste['pays_artiste'] . "</p>";
-    echo "<p class='style-musical'>" . $arrInfosArtiste['style_musical'] . "</p>";
-    echo "<p class='site-web-artiste'><a href='" . $arrInfosArtiste['site_web_artiste'] . "'>" . $arrInfosArtiste['site_web_artiste'] . "</a></p>";
+    if (count($arrEvenements) > 0) { 
+        foreach ($arrEvenements as $index => $evenement) { 
+            echo '<p class="event-list__location">' . $evenement['nom_lieu'] . '</p>';
+            
+            $moisTexte = $arrMois[$evenement['mois_evenement'] - 1];
+            $jourSemaineTexte = $arrJours[array_search($evenement['jour_semaine_evenement'], ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'])];
+            
+            echo '<p class="event-list__date">' . $jourSemaineTexte . ' ' . $evenement['jour_evenement'] . ' ' . $moisTexte . ' ' . $evenement['annee_evenement'] . ' à ' . $evenement['heure_evenement'] . 'h' . $evenement['minute_evenement'] . '</p>';
+            
+            echo '<img class="event-list__image" src="liaisons/images/artistes/' . $id_artiste . '_' .  rand(1, 5) . '.jpg" alt="Image de l\'événement">'; 
+
+            if ($index < count($arrEvenements) - 1) {
+                echo '<div class="event-list__separator"></div>';
+            }
+        }
+    } else {
+        echo '<p class="event-list__no-event">Aucun événement trouvé.</p>';
+    }
     ?>
 </div>
-</div>
 
+<h2 class="similar-artists__title">Vous pourriez aussi aimer</h2>
+<div class="similar-artists">
 <?php
-echo "<p class='description-artiste'>" . $arrInfosArtiste['description_artiste'] . "</p>";
-?>
-
-<div class="container_evenement">
-<?php
-if (count($arrEvenements) > 0) { 
-    foreach ($arrEvenements as $index => $evenement) { 
-        echo '<p class="lieu_evenement">' . $evenement['nom_lieu'] . '</p>';
-        
-        $moisTexte = $arrMois[$evenement['mois_evenement'] - 1];
-        $jourSemaineTexte = $arrJours[array_search($evenement['jour_semaine_evenement'], ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'])];
-        
-        echo '<p class="date_evenement">' . $jourSemaineTexte . ' ' . $evenement['jour_evenement'] . ' ' . $moisTexte . ' ' . $evenement['annee_evenement'] . ' à ' . $evenement['heure_evenement'] . 'h' . $evenement['minute_evenement'] . '</p>';
-        
-        echo '<img class="image_evenement" src="liaisons/images/artistes/' . $id_artiste . '_' .  rand(1, 5) . '.jpg" alt="image Evenement">'; 
-
-        // Ajouter la ligne après chaque événement sauf le dernier
-        if ($index < count($arrEvenements) - 1) {
-            echo '<div class="line_evenement"></div>'; // Ligne entre les événements
+    if (count($arrArtisteSimilaire) > 0) { 
+        $count = 0; // Initialise le compteur
+        foreach ($arrArtisteSimilaire as $artisteSimilaire) {
+            if ($count >= 3) break; // Arrête la boucle après 3 artistes
+            echo '<div class="similar-artists__item">';
+            echo '<a class="similar-artists__link" href="artistes/fiches/index.php?id_artiste=' . $artisteSimilaire['id_artiste'] . '">';
+            echo $artisteSimilaire['nom_artiste'];
+            echo '<img class="similar-artists__image" src="liaisons/images/artistes/' . $artisteSimilaire['id_artiste'] . '_' . rand(1, 5) . '.jpg" alt="Image de l\'artiste similaire">';
+            echo '</a>';
+            echo '</div>';
+            $count++; // Incrémente le compteur
         }
+    } else {
+        echo '<p class="similar-artists__no-artist">Aucun artiste similaire trouvé.</p>'; 
     }
-
-    echo '</div>';
-} else {
-    echo '<p>Aucun événement trouvé.</p>';
-}
 ?>
 
-
+    
 </div>
-<h2 class="h2_similaire" >Vous pourriez aussi aimer</h2>
-<?php
-if (count($arrArtisteSimilaire) > 0) { 
-    foreach ($arrArtisteSimilaire as $artisteSimilaire) {
-        echo '<div class="container_artiste_similaire">';
-        echo '<a class="lien_artiste_similaire" href="artistes/fiches/index.php?id_artiste=' . $artisteSimilaire['id_artiste'] . '">';
-        echo $artisteSimilaire['nom_artiste'];
-        echo '<img class="image_artiste_similaire" src="liaisons/images/artistes/' . $artisteSimilaire['id_artiste'] . '_' . rand(1, 5) . '.jpg" alt="imagebanniere">';
-        echo '</a>';
-        echo '</div>';
-    }
-} else {
-    echo '<p>Aucun artiste similaire trouvé.</p>'; 
-}
-?>
 
-</body>
 <?php include $niveau . 'liaisons/fragments/piedDePage.inc.php'; ?>
+</body>
 </html>
