@@ -103,18 +103,6 @@ AND styles_artistes.artiste_id <> " . $id_artiste;
         );
     }
 
-
-
-
-
-
-
-
-
-	
-    //Fermeture du curseur
-
-
 	$pdosResultat->closeCursor();
     $pdoResultatEvenement->closeCursor();
     $pdoResultatArtisteSimilaire->closeCursor();

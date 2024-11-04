@@ -1,5 +1,6 @@
-<footer>
+<footer role="contentinfo">
     <img class="off" src="..\public\liaisons\images\png\logoOff_blanc.png" alt="logo">
+    <nav aria-label="footer" class="footer-nav">
     <div class="container">
         <div class="row">      
 <div class="footer__carte">
@@ -18,7 +19,7 @@
     </ul>
     </div>
     <div class="footer__carte">
-    <h4>Artistes</h4>
+    <a href="<?php echo $niveau;?>artistes/index.php"><h4>Artistes</h4></a>
     <ul>
         <li><a href="..\public\artistes\index.php">De A-Z</a></li>
         <li><a href="..\public\artistes\fiches\index.php">Par style musical</a></li>
@@ -34,8 +35,8 @@
 
 </div>
 </div>
-
-<h4 class="h4__festival">Festival OFF de Québec</h4>
+</nav>
+<h4 class="h4__footer">Festival OFF de Québec</h4>
 <div class="contact">
 <a href="https://maps.app.goo.gl/oFvKWV5oJJNpxwBX8">110 boulevard René-Lévesque Ouest <br> C.P. 48036 Québec, Québec G1R 5R5</a><br>
 <a href="mailto:info@quebecoff.org"> info@quebecoff.org </a><br>

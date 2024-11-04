@@ -1,4 +1,4 @@
-<header>
+<header role="header">
     <input type="checkbox" id="menu-toggle">
     <label id="burger" for="menu-toggle">
         <div></div>
@@ -6,7 +6,7 @@
         <div></div>
     </label>
     
-    <nav id="menu">
+    <nav id="menu" aria-label="Principale">
         <div class="logo">
             <a href="index.php">
             <img src="liaisons/images/png/logoOff_blanc.png" alt="Logo Festival OFF de Québec">
