@@ -1,102 +1,89 @@
-.container-banniere {
+.banner {
     position: relative;
     width: 100%;
+
+    &__image {
+        width: 100%;
+        position: relative;
+        display: block;
+        z-index: -1;
+    }
+
+    &__artist-name {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        @include fontSize(320px);
+        font-weight: bold;
+        text-align: center;
+        z-index: 1;
+        color: transparent;
+        -webkit-text-stroke: 8px $blanc;
+        text-stroke: 8px $blanc;
+        letter-spacing: 3rem;
+    }
 }
 
-.imageBanniereFicheArtiste {
-    width: 100%;
-    display: block;
-}
-
-.nom-artiste {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    @include fontSize(320px);
-    font-weight: bold;
-    text-align: center;
-    z-index: 1;
-    color: transparent;
-    -webkit-text-stroke: 8px $blanc;
-    text-stroke: 8px $blanc;
-    letter-spacing: 30px;
-}
-
-/* Container du SVG et du h2 */
-.svg-container {
+.info-header {
     position: relative;
     width: 100%;
     height: auto;
     margin-top: 150px;
+
+    &__background {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: auto;
+        z-index: 1;
+    }
+
+    &__title {
+        position: absolute;
+        bottom: 50px;
+        left: 50%;
+        transform: translateX(-50%);
+        color: $blanc;
+        @include fontSize(60px);
+        font-weight: bold;
+        text-align: center;
+        z-index: 2;
+    }
 }
 
-.fondH1Infos {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: auto;
-    z-index: 1;
-}
-
-.h2Infos {
-    position: absolute;
-    bottom: 50px;
-    left: 50%;
-    transform: translateX(-50%);
-    color: $blanc;
-    @include fontSize(60px);
-    font-weight: bold;
-    text-align: center;
-    z-index: 2;
-}.containerPhotoInfos {
+.artist-info {
     display: flex; 
     align-items: center; 
     margin-top: 300px;
     position: relative; 
     width: 100%; 
-    justify-content: center; 
+    justify-content: space-around; 
     margin-bottom: 50px; 
+
+    &__website__link {
+        color: $PurpleHeart;
+        text-decoration: none; 
+        font-weight: bold; 
+    }
+    &__website__link:hover {
+        color: $HotPink;
+    }
+
+    &__photo {
+        width: 25%; 
+        height: auto;
+        display: block; 
+        border: 8px solid $PurpleHeart; 
+        border-radius: 1.5%; 
+        position: relative; 
+        z-index: 2; 
+    }
+  
 }
 
-/* Style de l'image */
-.ImageInfos {
-    width: 25%; 
-    height: auto;
-    display: block; 
-    border: 8px solid $PurpleHeart; 
-    border-radius: 1.5%; 
-    position: relative; 
-    z-index: 2; 
-}
-
-
-/* Style pour le conteneur d'informations */
-.infosArtiste {
-    margin-left: 20px; 
-    position: relative; 
-    z-index: 2; 
-}
-.provenance-artiste,
-.style-musical,
-.site-web-artiste {
-    margin: 25px 0; 
-    text-align: center;
-    font-family: $fonteSecondaire;
-    @include fontSize(22px);
-}
-
-.site-web-artiste a {
-    color: $PurpleHeart;
-    text-decoration: none; 
-    font-weight: bold; 
-}
-.site-web-artiste a:hover {
-    color: $HotPink;
-}
-
-.description-artiste {
+.artist-description {
     font-family:$fonteSecondaire;
     text-align: center; 
     @include fontSize(25px); 
@@ -104,53 +91,62 @@
     margin: 0 auto;
     margin-top: 100px;
 }
-.container_evenement {
-   background-color: $PurpleHeart;
+
+.event-list {
+    background-color: $PurpleHeart;
     padding: 20px;
     max-width: 50%;
     margin: 0 auto;
     margin-top: 200px;
     border-radius: 10px;
     border: 4px solid $HotPink;
-}
-.line_evenement {
-    border-top: 2px solid $HotPink;
-    margin-top: 50px;
-    padding-bottom: 30px;
-    width: 100%;
-}
-.image_evenement {
-    width: 60%; 
-    height: auto; 
-    display: block; 
-    margin: 0 auto;
-    border-radius: 1.5%; 
-    border: 8px solid $HotPink;
-    margin-bottom: 20px;
-    margin-top: 20px;
-}
 
-.lieu_evenement {
-    font-family: $fonteSecondaire;
-    @include fontSize(22px); 
-    text-align: center; 
-    color: $blanc;
-}
-.date_evenement {
-    font-family: $fonteSecondaire;
-    @include fontSize(25px);
-    text-align: center; 
-    color: $blanc;
-}
+    &__location,
+    &__date{
+        font-family: $fonteSecondaire;
+        text-align: center; 
+        color: $blanc;
+        @include fontSize(25px);
 
-.h2_similaire {
-    font-family: $fontePrimaire;
-    @include fontSize(40px); 
-    text-align: center; 
-    margin-top: 130px;
-    margin-bottom: 50px;
+    }
+    &__location {
+        @include fontSize(22px); 
+    }
+    &__image {
+        width: 60%; 
+        height: auto; 
+        display: block; 
+        margin: 0 auto;
+        border-radius: 1.5%; 
+        border: 8px solid $HotPink;
+        margin-bottom: 20px;
+        margin-top: 20px;
+    }
+
+    &__separator {
+        border-top: 2px solid $HotPink;
+        margin-top: 50px;
+        padding-bottom: 30px;
+        width: 100%;
+    }
+
+    &__no-event {
+        font-size: 1.4rem;
+        color: #666;
+    }
 }
-.container_artiste_similaire {
+.similar-artists {
+   
+
+    &__title {
+        font-family: $fontePrimaire;
+        @include fontSize(40px); 
+        text-align: center; 
+        margin-top: 130px;
+        margin-bottom: 50px;
+    }
+
+    &__item {
     background-color: $PurpleHeart;
     margin: 0 auto;
     max-width: 50%;
@@ -158,67 +154,109 @@
     border-radius: 10px;
     border: 7px solid $HotPink;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    &__item:hover {
+        transform: scale(1.05);
+        box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+        filter: brightness(110%);
+    }
+
+    &__link {
+        text-decoration: none; 
+        color: $blanc; 
+        font-weight: bold; 
+        @include fontSize(30px); 
+        display: block; 
+        text-align: center; 
+        margin-top: 20px;
+    }
+
+    &__image {
+        width: 55%; 
+        height: auto; 
+        display: block; 
+        margin: 0 auto;
+        border-radius: 1.5%; 
+        border-bottom-left-radius:0 ;
+        border-bottom-right-radius: 0;
+        border: 8px solid $HotPink;
+        border-bottom: 0;
+        margin-top: 20px;
+        margin-bottom: 0px;
+    }
+
+    &__no-artist {
+        font-size: 1.4rem;
+        color: #666;
+    }
 }
 
-.container_artiste_similaire:hover {
-    transform: scale(1.05);
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
-}
-.lien_artiste_similaire {
-    text-decoration: none; 
-    color: $blanc; 
-    font-weight: bold; 
-    @include fontSize(30px); 
-    display: block; 
-    text-align: center; 
-    margin-top: 20px;
-}
-.image_artiste_similaire {
-    width: 55%; 
-    height: auto; 
-    display: block; 
-    margin: 0 auto;
-    border-radius: 1.5%; 
-    border-bottom-left-radius:0 ;
-    border-bottom-right-radius: 0;
-    border: 8px solid $HotPink;
-    border-bottom: 0;
-    margin-top: 20px;
-    margin-bottom: 0px;
-}
 
-/* Styles adaptatifs pour petits écrans */
-@media (max-width: 600px) {
-    .nom-artiste {
-        @include fontSize(60px);
-        -webkit-text-stroke: 2px $blanc;
-        text-stroke: 2px $blanc;
-        letter-spacing: 15px;
+@media(max-width: 600px){
+    .banner {
+        &__artist-name {
+            @include fontSize(80px);
+            letter-spacing: 2rem;
+        }
     }
-    .fondH1Infos {
-        width: 200% !important;
-    }
-    .h2Infos {
-        @include fontSize(30px);
-        bottom: 32px;
-    }
-    .svg-container {
+
+    .info-header {
         margin-top: 35px;
-    }
-    .containerPhotoInfos{
-        flex-direction: column;
-        margin-top: 100px;
-    }
-    .ImageInfos {
-        width: 70%;
-        margin-bottom: 50px;
-    }
-    .container_evenement {
-        max-width: 90%;
-    }
-    .container_artiste_similaire {
-        max-width: 90%;
-    }
-   
 
+
+
+        &__title {
+            @include fontSize(25px);
+            bottom: 13px;
+
+        }
+        &__background {
+            width: 100% !important;
+        }
+    }
+
+    .artist-info {
+        flex-direction: column; 
+        margin-top: 100px;
+
+        &__photo {
+            width: 50%; 
+            margin-bottom: 20px;
+        }
+    }
+
+    .artist-description {
+        @include fontSize(20px); 
+        max-width: 80%;
+    }
+
+    .event-list {
+        max-width: 80%;
+        margin-top: 100px;
+
+        &__location,
+        &__date{
+            @include fontSize(20px);
+        }
+    }
+
+    .similar-artists {
+        &__title {
+            @include fontSize(30px); 
+            margin-top: 50px;
+        }
+
+        &__item {
+            max-width: 80%;
+        }
+
+        &__link {
+            @include fontSize(20px); 
+        }
+
+        &__image {
+            width: 100%; 
+            border-radius: 0;
+        }
+    }
 }

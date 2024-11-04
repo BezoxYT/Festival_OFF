@@ -46,7 +46,7 @@
         </ul>
     </nav>
     
-    <div class="banner">
+    <div class="bannerr">
         <h1>FESTIVAL OFF DE QUÉBEC</h1>
         <p>DU 11 AU 14 JUILLET</p>
     </div>
